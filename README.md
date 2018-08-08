@@ -36,23 +36,6 @@ If you're using webpack and babel, that could look like:
 Usage
 -----
 
-* [Element](#element)
-  * [create()](#create)
-  * [addClass()](#addclass)
-  * [removeClass()](#removeclass)
-  * [hasClass()](#hasclass)
-  * [data()](#data)
-* [Event](#event)
-  * [ready()](#ready)
-  * [on()](#on)
-  * [off()](#off)
-  * [delegate()](#delegate)
-  * [dispatch()](#dispatch)
-* [Query](#query)
-  * [find()](#find)
-  * [closest()](#closest)
-  * [matches()](#matches)
-
 ```javascript
 import {
     // Element
@@ -76,9 +59,29 @@ import {
 } from 'domestique';
 ```
 
+API
+---
+
+* [Element](#element)
+  * [create()](#create)
+  * [addClass()](#addclass)
+  * [removeClass()](#removeclass)
+  * [hasClass()](#hasclass)
+  * [data()](#data)
+* [Event](#event)
+  * [ready()](#ready)
+  * [on()](#on)
+  * [off()](#off)
+  * [delegate()](#delegate)
+  * [dispatch()](#dispatch)
+* [Query](#query)
+  * [find()](#find)
+  * [closest()](#closest)
+  * [matches()](#matches)
+
 ### Element
 
-### create()
+#### create()
 
 ```
 create(html: string): Element
@@ -86,13 +89,13 @@ create(html: string): Element
 
 Creates a DOM element from a HTML string.
 
-#### Example
+##### Example
 
 ```javascript
 const element = create('<div/>');
 ```
 
-### addClass()
+#### addClass()
 
 ```
 addClass(element: Element, className: string): void
@@ -100,14 +103,14 @@ addClass(element: Element, className: string): void
 
 Adds a class (or multiple classes separated by space) to an element.
 
-#### Example
+##### Example
 
 ```javascript
 addClass(element, 'my-class');
 addClass(element, 'my-class my-other-class');
 ```
 
-### removeClass()
+#### removeClass()
 
 ```
 removeClass(element: Element, className: string): void
@@ -115,14 +118,14 @@ removeClass(element: Element, className: string): void
 
 Removes a class (or multiple classes separated by space) from an element.
 
-#### Example
+##### Example
 
 ```javascript
 removeClass(element, 'my-class');
 removeClass(element, 'my-class my-other-class');
 ```
 
-### hasClass()
+#### hasClass()
 
 ```
 hasClass(element: Element, className: string): bool
@@ -130,14 +133,14 @@ hasClass(element: Element, className: string): bool
 
 Checks whether an element has a class (or multiple classes separated by space).
 
-#### Example
+##### Example
 
 ```javascript
 const hasClass = hasClass(element, 'my-class');
 const hasAllClasses = hasClass(element, 'my-class my-other-class');
 ```
 
-### data()
+#### data()
 
 ```
 data(element: Element, name: string): bool
@@ -145,7 +148,7 @@ data(element: Element, name: string): bool
 
 Reads and parses data from an data-* attribute.
 
-#### Example
+##### Example
 
 ```html
 <div
@@ -173,7 +176,7 @@ const jsonArrayValue = data(element, 'json-array');
 
 ### Event
 
-### ready()
+#### ready()
 
 ```
 ready(listener: function): void
@@ -183,7 +186,7 @@ Registers a listener to be called once the DOM is ready.
 
 Unlike `DOMContentLoaded`, this also works when called after the DOM was loaded.
 
-#### Example
+##### Example
 
 ```javascript
 ready(function () {
@@ -191,7 +194,7 @@ ready(function () {
 });
 ```
 
-### on()
+#### on()
 
 ```
 on(target: EventTarget, type: string, listener: EventListener[, options: object]): function
@@ -211,7 +214,7 @@ follows:
 
 The function returns another function which can be used to unregister the event listener.
 
-#### Example
+##### Example
 
 ```javascript
 const target = document.querySelector('.my-button');
@@ -232,7 +235,7 @@ const remove = on(
 remove(); // Remove event listener
 ```
 
-### off()
+#### off()
 
 ```
 off(target: EventTarget, type: string, listener: EventListener[, options: object]): void
@@ -240,7 +243,7 @@ off(target: EventTarget, type: string, listener: EventListener[, options: object
 
 Removes a listener previously registered via `on()`.
 
-#### Example
+##### Example
 
 ```javascript
 off(
@@ -251,7 +254,7 @@ off(
 );
 ```
 
-### delegate()
+#### delegate()
 
 ```
 delegate(target: EventTarget, type: string, selector: string, listener: EventListener[, options: object]): function
@@ -263,7 +266,7 @@ processes events from descendant elements of `target` matching the specified
 
 The function returns another function which can be used to unregister the event listener.
 
-#### Example
+##### Example
 
 ```javascript
 const listener = function () {
@@ -284,7 +287,7 @@ const remove = delegate(
 remove(); // Remove event listener
 ```
 
-### dispatch()
+#### dispatch()
 
 ```
 dispatch(target: EventTarget, type: string[, eventInit: CustomEventInit]): function
@@ -293,7 +296,7 @@ dispatch(target: EventTarget, type: string[, eventInit: CustomEventInit]): funct
 Dispatches a [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) 
 `type` at the specified `target` optionally using the `eventInit` options.
 
-#### Example
+##### Example
 
 ```javascript
 dispatch(document, 'click');
@@ -313,7 +316,7 @@ dispatch(
 
 ### Query
 
-#### find()
+##### find()
 
 ```
 find(selector: string[, element: Element]): array
@@ -323,7 +326,7 @@ Returns an `array` of elements matching the specified `selector` which are
 descendants of the `document` or the `element` specified as optional second 
 argument.
 
-##### Example
+###### Example
 
 ```javascript
 const paragraphs = find('p');
@@ -331,7 +334,7 @@ const paragraphs = find('p');
 const spansInsideFirstParagraph = find('spans', paragraphs[0]);
 ```
 
-#### closest()
+##### closest()
 
 ```
 closest(element: Element, selector: string): Element
@@ -342,13 +345,13 @@ matches the specified `selector`.
 
 If there isn't such an ancestor, it returns `null`.
 
-##### Example
+###### Example
 
 ```javascript
 const closestParagraph = closest(element, 'p');
 ```
 
-#### matches()
+##### matches()
 
 ```
 matches(element: Element, selector: string): boolean
@@ -357,7 +360,7 @@ matches(element: Element, selector: string): boolean
 Returns `true` if the `element` would be selected by the specified `selector`, 
 `false` otherwise.
 
-##### Example
+###### Example
 
 ```javascript
 const isParagraph = matches(element, 'p');
