@@ -316,7 +316,7 @@ dispatch(
 
 ### Query
 
-##### find()
+#### find()
 
 ```
 find(selector: string[, element: Element]): array
@@ -326,7 +326,7 @@ Returns an `array` of elements matching the specified `selector` which are
 descendants of the `document` or the `element` specified as optional second 
 argument.
 
-###### Example
+##### Example
 
 ```javascript
 const paragraphs = find('p');
@@ -334,7 +334,7 @@ const paragraphs = find('p');
 const spansInsideFirstParagraph = find('spans', paragraphs[0]);
 ```
 
-##### closest()
+#### closest()
 
 ```
 closest(element: Element, selector: string): Element
@@ -345,13 +345,13 @@ matches the specified `selector`.
 
 If there isn't such an ancestor, it returns `null`.
 
-###### Example
+##### Example
 
 ```javascript
 const closestParagraph = closest(element, 'p');
 ```
 
-##### matches()
+#### matches()
 
 ```
 matches(element: Element, selector: string): boolean
@@ -360,7 +360,7 @@ matches(element: Element, selector: string): boolean
 Returns `true` if the `element` would be selected by the specified `selector`, 
 `false` otherwise.
 
-###### Example
+##### Example
 
 ```javascript
 const isParagraph = matches(element, 'p');
