@@ -38,6 +38,9 @@ Usage
 
 ```javascript
 import {
+    // Dimension
+    scrollbarWidth,
+        
     // Element
     create,
     addClass,
@@ -62,6 +65,8 @@ import {
 API
 ---
 
+* [Dimension](#dimension)
+  * [scrollbarWidth()](#scrollbarwidth)
 * [Element](#element)
   * [create()](#create)
   * [addClass()](#addclass)
@@ -78,6 +83,22 @@ API
   * [find()](#find)
   * [closest()](#closest)
   * [matches()](#matches)
+
+### Dimension
+
+### scrollbarWidth()
+
+```
+scrollbarWidth(): number
+```
+
+Returns the width of the scrollbar in pixels.
+
+#### Example
+
+```javascript
+const width = scrollbarWidth();
+```
 
 ### Element
 

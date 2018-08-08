@@ -13,6 +13,7 @@
     "dom",
     "helper",
     "utility",
+    "dimension",
     "element",
     "event",
     "query",

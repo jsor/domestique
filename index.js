@@ -1,3 +1,5 @@
+import scrollbarWidth from './src/dimension/scrollbar-width';
+
 import create from './src/element/create';
 import {addClass, hasClass, removeClass} from './src/element/class';
 import data from './src/element/data';
@@ -13,6 +15,9 @@ import find from './src/query/find';
 import matches from './src/query/matches';
 
 export {
+    // Dimension
+    scrollbarWidth,
+
     // Element
     create,
     addClass,
