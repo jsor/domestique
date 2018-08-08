@@ -1,0 +1,20 @@
+language: node_js
+
+node_js:
+  - stable
+
+addons:
+  firefox: latest
+  chrome: stable
+
+cache:
+  directories:
+    - node_modules
+
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+script:
+  - npm test
+  - npm run test:browserstack

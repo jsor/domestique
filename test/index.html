@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>dom-element-helpers Tests</title>
+    <link rel="stylesheet" href="https://unpkg.com/mocha@5.2.0/mocha.css">
+
+    <script src="https://unpkg.com/mocha@5.2.0/mocha.js"></script>
+    <script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
+
+    <script>
+        mocha.setup('bdd');
+        var assert = chai.assert;
+
+        // Browser stack requires mocha to be run on window.onload
+        // https://github.com/browserstack/browserstack-runner/issues/94
+        window.onload = function () {
+            mocha.checkLeaks();
+            mocha.run();
+        };
+    </script>
+</head>
+<body>
+    <div id="mocha"></div>
+
+    <script src="./build.js"></script>
+</body>
+</html>
