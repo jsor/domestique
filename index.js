@@ -1,5 +1,7 @@
 import scrollbarSize from './src/dimension/scrollbar-size';
 import viewport from './src/dimension/viewport';
+import viewportHeight from './src/dimension/viewport-height';
+import viewportWidth from './src/dimension/viewport-width';
 
 import create from './src/element/create';
 import {addClass, hasClass, removeClass} from './src/element/class';
@@ -19,6 +21,8 @@ export {
     // Dimension
     scrollbarSize,
     viewport,
+    viewportHeight,
+    viewportWidth,
 
     // Element
     create,

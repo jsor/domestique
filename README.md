@@ -41,6 +41,8 @@ import {
     // Dimension
     scrollbarSize,
     viewport,
+    viewportHeight,
+    viewportWidth,
         
     // Element
     create,
@@ -69,6 +71,8 @@ API
 * [Dimension](#dimension)
   * [scrollbarSize()](#scrollbarsize)
   * [viewport()](#viewport)
+  * [viewportHeight()](#viewportheight)
+  * [viewportWidth()](#viewportwidth)
 * [Element](#element)
   * [create()](#create)
   * [addClass()](#addclass)
@@ -120,6 +124,42 @@ size of a rendered scroll bar (if any).
 
 ```javascript
 const vp = viewport();
+```
+
+### viewportHeight()
+
+```
+viewportHeight(): number
+```
+
+Returns the viewport height.
+
+Note: The height represent the CSS viewport height
+([@media (height)](https://www.w3.org/TR/mediaqueries-4/#height)) including the
+size of a rendered scroll bar (if any).
+
+#### Example
+
+```javascript
+const vpHeight = viewportHeight();
+```
+
+### viewportWidth()
+
+```
+viewportWidth(): number
+```
+
+Returns the viewport width.
+
+Note: The width represent the CSS viewport width
+([@media (width)](https://www.w3.org/TR/mediaqueries-4/#width)) including the
+size of a rendered scroll bar (if any).
+
+#### Example
+
+```javascript
+const vpWidth = viewportWidth();
 ```
 
 ### Element
