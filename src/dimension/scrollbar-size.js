@@ -1,6 +1,6 @@
 let size = null;
 
-export default function scrollbarWidth() {
+export default function scrollbarSize() {
     if (size !== null) {
         return size;
     }
