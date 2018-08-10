@@ -1,5 +1,4 @@
-import delegate from '../../src/event/delegate';
-import dispatch from '../../src/event/dispatch';
+import { delegate, dispatch } from '../../index';
 
 describe('delegate()', () => {
     const fixtures = document.createElement('div');

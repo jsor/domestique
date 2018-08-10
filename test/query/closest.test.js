@@ -1,4 +1,4 @@
-import closest from '../../src/query/closest';
+import { closest } from '../../index';
 
 describe('closest()', () => {
     const fixtures = document.createElement('div');

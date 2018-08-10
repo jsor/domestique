@@ -1,4 +1,4 @@
-import dispatch from '../../src/event/dispatch';
+import { dispatch } from '../../index';
 
 describe('dispatch()', () => {
     it('dispatches an event on the passed DOM element', done => {

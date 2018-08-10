@@ -1,4 +1,4 @@
-import create from '../../src/element/create';
+import { create } from '../../index';
 
 describe('create()', () => {
     it('creates a node from a string', () => {

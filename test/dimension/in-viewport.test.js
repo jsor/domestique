@@ -1,4 +1,4 @@
-import inViewport from "../../src/dimension/in-viewport";
+import { inViewport } from "../../index";
 
 describe('inViewport()', () => {
     it('returns true for element in viewport', () => {

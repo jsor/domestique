@@ -1,4 +1,4 @@
-import matches from '../../src/query/matches';
+import { matches } from '../../index';
 
 describe('matches()', () => {
     const fixtures = document.createElement('div');

@@ -1,4 +1,4 @@
-import find from '../../src/query/find';
+import { find } from '../../index';
 
 describe('find()', () => {
     const fixtures = document.createElement('div');

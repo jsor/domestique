@@ -1,5 +1,4 @@
-import on from '../../src/event/on';
-import dispatch from '../../src/event/dispatch';
+import { on, dispatch } from '../../index';
 
 describe('on()', () => {
     const fixtures = document.createElement('div');

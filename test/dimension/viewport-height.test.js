@@ -1,4 +1,4 @@
-import viewportHeight from "../../src/dimension/viewport-height";
+import { viewportHeight } from "../../index";
 
 describe('viewportHeight()', () => {
     it('returns viewport height', () => {

@@ -1,5 +1,4 @@
-import create from '../../src/element/create';
-import data from '../../src/element/data';
+import { data, create } from '../../index';
 
 describe('data()', () => {
     it('returns null for non-existent data attributes', () => {

@@ -1,4 +1,4 @@
-import viewportWidth from "../../src/dimension/viewport-width";
+import { viewportWidth } from "../../index";
 
 describe('viewportWidth()', () => {
     it('returns viewport width', () => {

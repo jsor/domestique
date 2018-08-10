@@ -1,4 +1,4 @@
-import viewport from "../../src/dimension/viewport";
+import { viewport } from "../../index";
 
 describe('viewport()', () => {
     it('returns viewport dimensions', () => {

@@ -1,4 +1,4 @@
-import scrollbarSize from '../../src/dimension/scrollbar-size';
+import { scrollbarSize } from '../../index';
 
 describe('scrollbarSize()', () => {
     it('returns a size', () => {
