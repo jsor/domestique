@@ -7,6 +7,10 @@ const regExpBrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/;
 const regExpMultiDash = /[A-Z]/g;
 
 export default function data(element, key) {
+    if (!element || typeof element.getAttribute !== 'function') {
+        return null;
+    }
+
     const name = 'data-' + key.replace(regExpMultiDash, '-$&').toLowerCase();
     const data = element.getAttribute(name);
 

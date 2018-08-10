@@ -1,4 +1,8 @@
 export default function dispatch(target, type, eventInit = {}) {
+    if (!target || typeof target.dispatchEvent !== 'function') {
+        return true;
+    }
+
     eventInit.bubbles = eventInit.bubbles || false;
     eventInit.cancelable = eventInit.cancelable || false;
     eventInit.composed = eventInit.composed || false;

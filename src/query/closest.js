@@ -1,7 +1,7 @@
 import matches from './matches';
 
 export default function closest(element, selector) {
-    if (!element || !selector) {
+    if (!element) {
         return null;
     }
 
@@ -14,7 +14,7 @@ export default function closest(element, selector) {
             return element;
         }
 
-        element = element.parentElement || element.parentNode;
+        element = element.parentNode;
     } while (element && element.nodeType === 1);
 
     return null;

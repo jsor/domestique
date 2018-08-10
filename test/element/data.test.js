@@ -66,4 +66,15 @@ describe('data()', () => {
 
         assert.equal(data(element, 'test'), '{"foo": bar}');
     });
+
+    it('works for non-elements', () => {
+        assert.isNull(data(undefined, 'test'));
+        assert.isNull(data('string', 'test'));
+        assert.isNull(data(true, 'test'));
+        assert.isNull(data(null, 'test'));
+        assert.isNull(data(1, 'test'));
+        assert.isNull(data(1.2, 'test'));
+        assert.isNull(data({foo: 'bar'}, 'test'));
+        assert.isNull(data(['bar'], 'test'));
+    });
 });

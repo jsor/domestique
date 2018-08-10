@@ -82,12 +82,21 @@ describe('closest()', () => {
     });
 
     it('works for non-elements', () => {
-        assert.equal(closest(null, 'p'), null);
+        assert.isNull(closest(undefined, '#foo'));
+        assert.isNull(closest('string', '#foo'));
+        assert.isNull(closest(true, '#foo'));
+        assert.isNull(closest(null, '#foo'));
+        assert.isNull(closest(1, '#foo'));
+        assert.isNull(closest(1.2, '#foo'));
+        assert.isNull(closest({foo: 'bar'}, '#foo'));
+        assert.isNull(closest(['bar'], '#foo'));
     });
 
-    it('works for empty selectors', () => {
-        const em = document.getElementById('em');
+    it('throws syntax error for invalid selector', () => {
+        const div = document.getElementById('div');
 
-        assert.equal(closest(em, ''), null);
+        assert.throws(() => {
+            closest(div, '');
+        });
     });
 });

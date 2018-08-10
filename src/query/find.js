@@ -1,11 +1,12 @@
-export default function find(selector, element = document) {
-    if (
-        !selector ||
-        !element ||
-        typeof element.querySelectorAll !== 'function'
-    ) {
+export default function find(selector, element) {
+    // Check here for explicitly passed element argument.
+    // find('selector', undefined) must return an empty array instead of using
+    // document as context.
+    const context = arguments.length > 1 ? element : document;
+
+    if (!context || typeof context.querySelectorAll !== 'function') {
         return [];
     }
 
-    return [].slice.call(element.querySelectorAll(selector));
+    return [].slice.call(context.querySelectorAll(selector));
 }

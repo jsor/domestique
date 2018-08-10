@@ -48,4 +48,15 @@ describe('dispatch()', () => {
 
         document.removeEventListener('click', cb);
     });
+
+    it('works for non-event-targets', () => {
+        assert(dispatch(undefined, 'click'));
+        assert(dispatch('string', 'click'));
+        assert(dispatch(true, 'click'));
+        assert(dispatch(null, 'click'));
+        assert(dispatch(1, 'click'));
+        assert(dispatch(1.2, 'click'));
+        assert(dispatch({foo: 'bar'}, 'click'));
+        assert(dispatch(['bar'], 'click'));
+    });
 });

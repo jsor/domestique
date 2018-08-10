@@ -26,6 +26,13 @@ describe('inViewport()', () => {
     });
 
     it('works for non-elements', () => {
+        assert.isFalse(inViewport(undefined));
+        assert.isFalse(inViewport('string'));
+        assert.isFalse(inViewport(true));
         assert.isFalse(inViewport(null));
+        assert.isFalse(inViewport(1));
+        assert.isFalse(inViewport(1.2));
+        assert.isFalse(inViewport({foo: 'bar'}));
+        assert.isFalse(inViewport(['bar']));
     });
 });

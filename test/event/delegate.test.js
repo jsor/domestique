@@ -121,4 +121,15 @@ describe('delegate()', () => {
 
         assert.equal(called, 1);
     });
+
+    it('works for non-event-targets', () => {
+        assert.isFunction(delegate(undefined, 'click', '#foo', () => {}));
+        assert.isFunction(delegate('string', 'click', '#foo', () => {}));
+        assert.isFunction(delegate(true, 'click', '#foo', () => {}));
+        assert.isFunction(delegate(null, 'click', '#foo', () => {}));
+        assert.isFunction(delegate(1, 'click', '#foo', () => {}));
+        assert.isFunction(delegate(1.2, 'click', '#foo', () => {}));
+        assert.isFunction(delegate({foo: 'bar'}, 'click', '#foo', () => {}));
+        assert.isFunction(delegate(['bar'], 'click', '#foo', () => {}));
+    });
 });

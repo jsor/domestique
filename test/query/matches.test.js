@@ -33,9 +33,22 @@ describe('matches()', () => {
         assert.isFalse(matches(null, '#foo'));
     });
 
-    it('works for empty selectors', () => {
+    it('works for non-elements', () => {
+        assert.isFalse(matches(undefined, '#foo'));
+        assert.isFalse(matches('string', '#foo'));
+        assert.isFalse(matches(true, '#foo'));
+        assert.isFalse(matches(null, '#foo'));
+        assert.isFalse(matches(1, '#foo'));
+        assert.isFalse(matches(1.2, '#foo'));
+        assert.isFalse(matches({foo: 'bar'}, '#foo'));
+        assert.isFalse(matches(['bar'], '#foo'));
+    });
+
+    it('throws syntax error for invalid selector', () => {
         const div = document.getElementById('foo');
 
-        assert.isFalse(matches(div, ''));
+        assert.throws(() => {
+            matches(div, '');
+        });
     });
 });

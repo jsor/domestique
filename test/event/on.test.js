@@ -56,4 +56,15 @@ describe('on()', () => {
 
         assert.equal(called, 1);
     });
+
+    it('works for non-event-targets', () => {
+        assert.isFunction(on(undefined, 'click', () => {}));
+        assert.isFunction(on('string', 'click', () => {}));
+        assert.isFunction(on(true, 'click', () => {}));
+        assert.isFunction(on(null, 'click', () => {}));
+        assert.isFunction(on(1, 'click', () => {}));
+        assert.isFunction(on(1.2, 'click', () => {}));
+        assert.isFunction(on({foo: 'bar'}, 'click', () => {}));
+        assert.isFunction(on(['bar'], 'click', () => {}));
+    });
 });

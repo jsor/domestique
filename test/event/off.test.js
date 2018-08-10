@@ -36,4 +36,15 @@ describe('off()', () => {
 
         dispatch(el, 'click');
     });
+
+    it('works for non-event-targets', () => {
+        assert.isFunction(off(undefined, 'click', () => {}));
+        assert.isFunction(off('string', 'click', () => {}));
+        assert.isFunction(off(true, 'click', () => {}));
+        assert.isFunction(off(null, 'click', () => {}));
+        assert.isFunction(off(1, 'click', () => {}));
+        assert.isFunction(off(1.2, 'click', () => {}));
+        assert.isFunction(off({foo: 'bar'}, 'click', () => {}));
+        assert.isFunction(off(['bar'], 'click', () => {}));
+    });
 });

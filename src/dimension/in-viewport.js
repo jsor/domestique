@@ -2,7 +2,7 @@ import viewportHeight from './viewport-height';
 import viewportWidth from './viewport-width';
 
 export default function inViewport(element) {
-    if (!element) {
+    if (!element || typeof element.getBoundingClientRect !== 'function') {
         return false;
     }
 

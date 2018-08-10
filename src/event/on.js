@@ -3,6 +3,10 @@ import optionsArgument from './options-argument';
 import off from './off';
 
 export default function on(target, type, listener, options = {capture: false}) {
+    if (!target || typeof target.addEventListener !== 'function') {
+        return () => {};
+    }
+
     let callback = listener;
 
     const remove = () => {

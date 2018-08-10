@@ -1,5 +1,5 @@
 export default function matches(element, selector) {
-    if (!element || !selector) {
+    if (!element) {
         return false;
     }
 
@@ -7,5 +7,9 @@ export default function matches(element, selector) {
         element.webkitMatchesSelector ||
         element.msMatchesSelector;
 
-    return nativeMatches && nativeMatches.call(element, selector);
+    if (typeof nativeMatches !== 'function') {
+        return false;
+    }
+
+    return nativeMatches.call(element, selector);
 }
