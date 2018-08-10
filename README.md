@@ -367,18 +367,22 @@ remove(); // Remove event listener
 #### dispatch()
 
 ```
-dispatch(target: EventTarget, type: string[, eventInit: CustomEventInit]): function
+dispatch(target: EventTarget, type: string[, eventInit: CustomEventInit]): bool
 ```
 
 Dispatches a [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) 
 `type` at the specified `target` optionally using the `eventInit` options.
 
+The function returns `false` if the event is cancelable and at least one of the
+event handlers which handled this event called `Event.preventDefault()`.
+Otherwise it returns `true`.
+
 ##### Example
 
 ```javascript
-dispatch(document, 'click');
+const clickNotCancelled = dispatch(document, 'click');
 
-dispatch(
+const myEventNotCancelled = dispatch(
     document.querySelector('.my-button'),
     'my:event',
     {
