@@ -71,7 +71,6 @@ API
 * [Dimension](#dimension)
   * [inViewport()](#inviewport)
   * [scrollbarSize()](#scrollbarsize)
-  * [viewport()](#viewport)
   * [viewportHeight()](#viewportheight)
   * [viewportWidth()](#viewportwidth)
 * [Element](#element)
@@ -119,26 +118,6 @@ Returns the size of the scrollbar in pixels.
 
 ```javascript
 const size = scrollbarSize();
-```
-
-### viewport()
-
-```
-viewport(): object
-```
-
-Returns the viewport dimensions as an object with `width` and `height`
-properties.
-
-Note: The dimensions represent the CSS viewport 
-([@media (width)](https://www.w3.org/TR/mediaqueries-4/#width) and 
-[@media (height)](https://www.w3.org/TR/mediaqueries-4/#height)) including the
-size of a rendered scroll bar (if any).
-
-#### Example
-
-```javascript
-const vp = viewport();
 ```
 
 ### viewportHeight()

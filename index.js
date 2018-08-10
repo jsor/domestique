@@ -1,6 +1,5 @@
 import inViewport from './src/dimension/in-viewport';
 import scrollbarSize from './src/dimension/scrollbar-size';
-import viewport from './src/dimension/viewport';
 import viewportHeight from './src/dimension/viewport-height';
 import viewportWidth from './src/dimension/viewport-width';
 
@@ -22,7 +21,6 @@ export {
     // Dimension
     inViewport,
     scrollbarSize,
-    viewport,
     viewportHeight,
     viewportWidth,
 
