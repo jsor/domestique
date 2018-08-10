@@ -69,6 +69,7 @@ API
 ---
 
 * [Dimension](#dimension)
+  * [inViewport()](#inviewport)
   * [scrollbarSize()](#scrollbarsize)
   * [viewport()](#viewport)
   * [viewportHeight()](#viewportheight)
@@ -91,6 +92,20 @@ API
   * [matches()](#matches)
 
 ### Dimension
+
+### inViewport()
+
+```
+inViewport(element: Element): bool
+```
+
+Returns `true` if any part of an element is in the viewport.
+
+#### Example
+
+```javascript
+const inVp = inViewport(element);
+```
 
 ### scrollbarSize()
 

@@ -1,3 +1,4 @@
+import inViewport from './src/dimension/in-viewport';
 import scrollbarSize from './src/dimension/scrollbar-size';
 import viewport from './src/dimension/viewport';
 import viewportHeight from './src/dimension/viewport-height';
@@ -19,6 +20,7 @@ import matches from './src/query/matches';
 
 export {
     // Dimension
+    inViewport,
     scrollbarSize,
     viewport,
     viewportHeight,
