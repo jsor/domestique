@@ -20,6 +20,10 @@ wrapMap.caption = wrapMap.thead;
 wrapMap.th = wrapMap.td;
 
 export default function create(html) {
+    if (html.nodeType) {
+        return html;
+    }
+
     let element = document.createElement('div');
 
     const match = /<([a-z][^/\0>\u0020\t\r\n\f]*)/i.exec(html);

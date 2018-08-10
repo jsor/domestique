@@ -106,4 +106,11 @@ describe('create()', () => {
 
         assert.equal(node.tagName.toLowerCase(), 'td');
     });
+
+    it('returns element as is if already a node', function() {
+        const element = document.createElement('div');
+        const node = create(element);
+
+        assert.equal(node, element);
+    });
 });

@@ -164,7 +164,8 @@ const vpWidth = viewportWidth();
 create(html: string): Element
 ```
 
-Creates a DOM element from a HTML string.
+Creates a DOM element from a HTML string. If it's already a DOM node, the node
+is returned as is.
 
 ##### Example
 
