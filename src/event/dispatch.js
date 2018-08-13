@@ -13,7 +13,7 @@ export default function dispatch(target, type, eventInit = {}) {
     try {
         event = new CustomEvent(type, eventInit);
     } catch (err) {
-        event = document.createEvent('Event');
+        event = document.createEvent('CustomEvent');
         event.initCustomEvent(
             type,
             eventInit.bubbles,
