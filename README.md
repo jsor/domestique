@@ -45,6 +45,7 @@ import {
     viewportWidth,
         
     // Element
+    activeElement,
     create,
     addClass,
     removeClass,
@@ -74,6 +75,7 @@ API
   * [viewportHeight()](#viewportheight)
   * [viewportWidth()](#viewportwidth)
 * [Element](#element)
+  * [activeElement()](#activeelement)
   * [create()](#create)
   * [addClass()](#addclass)
   * [removeClass()](#removeclass)
@@ -157,6 +159,20 @@ const vpWidth = viewportWidth();
 ```
 
 ### Element
+
+#### activeElement()
+
+```
+activeElement(): Element
+```
+
+Returns the element that currently has focus.
+
+##### Example
+
+```javascript
+const element = activeElement();
+```
 
 #### create()
 
