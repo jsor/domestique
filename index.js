@@ -7,6 +7,7 @@ import activeElement from './src/element/active-element';
 import create from './src/element/create';
 import {addClass, hasClass, removeClass} from './src/element/class';
 import data from './src/element/data';
+import focus from './src/element/focus';
 
 import delegate from './src/event/delegate';
 import dispatch from './src/event/dispatch';
@@ -32,6 +33,7 @@ export {
     removeClass,
     hasClass,
     data,
+    focus,
 
     // Event
     delegate,

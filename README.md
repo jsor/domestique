@@ -81,6 +81,7 @@ API
   * [removeClass()](#removeclass)
   * [hasClass()](#hasclass)
   * [data()](#data)
+  * [focus()](#focus)
 * [Event](#event)
   * [ready()](#ready)
   * [on()](#on)
@@ -266,6 +267,20 @@ const integerValue = data(element, 'integer');
 const floatValue = data(element, 'float');
 const jsonObjectValue = data(element, 'json-object');
 const jsonArrayValue = data(element, 'json-array');
+```
+
+#### focus()
+
+```
+focus(element: Element): void
+```
+
+Shifts focus to an element.
+
+##### Example
+
+```javascript
+focus(element);
 ```
 
 ### Event
