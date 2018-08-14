@@ -8,6 +8,7 @@ import create from './src/element/create';
 import {addClass, hasClass, removeClass} from './src/element/class';
 import data from './src/element/data';
 import focus from './src/element/focus';
+import parents from './src/element/parents';
 
 import delegate from './src/event/delegate';
 import dispatch from './src/event/dispatch';
@@ -34,6 +35,7 @@ export {
     hasClass,
     data,
     focus,
+    parents,
 
     // Event
     delegate,

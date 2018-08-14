@@ -52,6 +52,7 @@ import {
     hasClass,
     data,
     focus,
+    parents,
     
     // Event
     ready,
@@ -83,6 +84,7 @@ API
   * [hasClass()](#hasclass)
   * [data()](#data)
   * [focus()](#focus)
+  * [parents()](#parents)
 * [Event](#event)
   * [ready()](#ready)
   * [on()](#on)
@@ -282,6 +284,20 @@ Shifts focus to an element.
 
 ```javascript
 focus(element);
+```
+
+#### parents()
+
+```
+parents(element: Element): Array
+```
+
+Returns an array of the element's parent elements.
+
+##### Example
+
+```javascript
+const parentElements = parents(element);
 ```
 
 ### Event
