@@ -1,26 +1,23 @@
 import {closest} from '../..';
+import createFixture from '../fixture';
 
 describe('closest()', () => {
-    const fixtures = document.createElement('div');
-    fixtures.id = 'fixtures';
-
-    document.body.appendChild(fixtures);
+    let fixture;
 
     beforeEach(() => {
-        fixtures.innerHTML =
+        fixture = createFixture();
+        fixture.append(
             '<div id="div">' +
             '  <p id="p">' +
             '    <em id="em"><em id="em2"></em></em>' +
             '  </p>' +
-            '</div>';
+            '</div>'
+        );
     });
 
     afterEach(() => {
-        fixtures.innerHTML = '';
-    });
-
-    after(() => {
-        document.body.removeChild(fixtures);
+        fixture.destroy();
+        fixture = null;
     });
 
     it('calls closest() if present on element', () => {

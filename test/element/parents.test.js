@@ -1,13 +1,20 @@
 import {parents} from '../..';
+import createFixture from '../fixture';
 
 describe('parents()', () => {
+    let fixture;
+
+    beforeEach(() => {
+        fixture = createFixture();
+    });
+
+    afterEach(() => {
+        fixture.destroy();
+        fixture = null;
+    });
+
     it('returns array fo parent elements', () => {
-        const fixtures = document.createElement('div');
-        fixtures.id = 'fixtures';
-
-        document.body.appendChild(fixtures);
-
-        fixtures.innerHTML = '<p id="p"><em id="em"><sup id="sup"></sup><em></p>';
+        fixture.append('<p id="p"><em id="em"><sup id="sup"></sup><em></p>');
 
         const p = document.getElementById('p');
         const em = document.getElementById('em');
@@ -16,12 +23,10 @@ describe('parents()', () => {
         assert.deepEqual(parents(sup), [
             em,
             p,
-            fixtures,
+            fixture.root,
             document.body,
             document.documentElement
         ]);
-
-        document.body.removeChild(fixtures);
     });
 
     it('returns an empty array if no parents exist', () => {

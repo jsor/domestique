@@ -1,6 +1,18 @@
 import {viewportHeight} from '../..';
+import createFixture from '../fixture';
 
 describe('viewportHeight()', () => {
+    let fixture;
+
+    beforeEach(() => {
+        fixture = createFixture();
+    });
+
+    afterEach(() => {
+        fixture.destroy();
+        fixture = null;
+    });
+
     it('returns viewport height', () => {
         const height = viewportHeight();
 
@@ -10,18 +22,10 @@ describe('viewportHeight()', () => {
     it('returns viewport height with scrollbar', () => {
         const heightNoScrollbars = viewportHeight();
 
-        const element = document.createElement('div');
-
-        element.style.display = 'block';
-        element.style.height = '9999px';
-        element.style.width = '9999px';
-
-        document.body.appendChild(element);
+        fixture.append('<div style="display:block;width:9999px;height:9999px"></div>');
 
         const height = viewportHeight();
 
         assert.equal(heightNoScrollbars, height);
-
-        document.body.removeChild(element);
     });
 });

@@ -1,27 +1,24 @@
 import {dispatch, off, on} from '../..';
+import createFixture from '../fixture';
 
 describe('off()', () => {
-    const fixtures = document.createElement('div');
-    fixtures.id = 'fixtures';
-
-    document.body.appendChild(fixtures);
+    let fixture;
 
     beforeEach(() => {
-        fixtures.innerHTML =
+        fixture = createFixture();
+        fixture.append(
             '<div id="item-1">' +
             '  <div id="item-2">' +
             '    <span>hello<span>' +
             '  </div>' +
             '  <div id="item-3"></div>' +
-            '</div>';
+            '</div>'
+        );
     });
 
     afterEach(() => {
-        fixtures.innerHTML = '';
-    });
-
-    after(() => {
-        document.body.removeChild(fixtures);
+        fixture.destroy();
+        fixture = null;
     });
 
     it('removes a listener', () => {
@@ -38,21 +35,13 @@ describe('off()', () => {
     });
 
     it('works for non-event-targets', () => {
-        assert.isUndefined(off(undefined, 'click', () => {
-        }));
-        assert.isUndefined(off('string', 'click', () => {
-        }));
-        assert.isUndefined(off(true, 'click', () => {
-        }));
-        assert.isUndefined(off(null, 'click', () => {
-        }));
-        assert.isUndefined(off(1, 'click', () => {
-        }));
-        assert.isUndefined(off(1.2, 'click', () => {
-        }));
-        assert.isUndefined(off({foo: 'bar'}, 'click', () => {
-        }));
-        assert.isUndefined(off(['bar'], 'click', () => {
-        }));
+        assert.isUndefined(off(undefined, 'click', () => {}));
+        assert.isUndefined(off('string', 'click', () => {}));
+        assert.isUndefined(off(true, 'click', () => {}));
+        assert.isUndefined(off(null, 'click', () => {}));
+        assert.isUndefined(off(1, 'click', () => {}));
+        assert.isUndefined(off(1.2, 'click', () => {}));
+        assert.isUndefined(off({foo: 'bar'}, 'click', () => {}));
+        assert.isUndefined(off(['bar'], 'click', () => {}));
     });
 });

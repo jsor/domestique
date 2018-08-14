@@ -1,21 +1,19 @@
 import {matches} from '../..';
+import createFixture from '../fixture';
 
 describe('matches()', () => {
-    const fixtures = document.createElement('div');
-    fixtures.id = 'fixtures';
-
-    document.body.appendChild(fixtures);
+    let fixture;
 
     beforeEach(() => {
-        fixtures.innerHTML = '<div id="foo" class="bar"></div>';
+        fixture = createFixture();
+        fixture.append(
+            '<div id="foo" class="bar"></div>'
+        );
     });
 
     afterEach(() => {
-        fixtures.innerHTML = '';
-    });
-
-    after(() => {
-        document.body.removeChild(fixtures);
+        fixture.destroy();
+        fixture = null;
     });
 
     it('matches against a CSS selector', () => {

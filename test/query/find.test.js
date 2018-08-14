@@ -1,21 +1,19 @@
 import {find} from '../..';
+import createFixture from '../fixture';
 
 describe('find()', () => {
-    const fixtures = document.createElement('div');
-    fixtures.id = 'fixtures';
-
-    document.body.appendChild(fixtures);
+    let fixture;
 
     beforeEach(() => {
-        fixtures.innerHTML = '<span id="foo" class="bar"><span id="nested" class="baz"></span></span>';
+        fixture = createFixture();
+        fixture.append(
+            '<span id="foo" class="bar"><span id="nested" class="baz"></span></span>'
+        );
     });
 
     afterEach(() => {
-        fixtures.innerHTML = '';
-    });
-
-    after(() => {
-        document.body.removeChild(fixtures);
+        fixture.destroy();
+        fixture = null;
     });
 
     it('queries against a CSS selector', () => {

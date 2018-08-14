@@ -1,10 +1,20 @@
 import {dispatch} from '../..';
+import createFixture from '../fixture';
 
 describe('dispatch()', () => {
-    it('dispatches an event on the passed DOM element', done => {
-        const element = document.createElement('div');
+    let fixture;
 
-        document.body.appendChild(element);
+    beforeEach(() => {
+        fixture = createFixture();
+    });
+
+    afterEach(() => {
+        fixture.destroy();
+        fixture = null;
+    });
+
+    it('dispatches an event on the passed DOM element', done => {
+        const element = fixture.append('<div></div>');
 
         const cb = event => {
             assert.isFalse(event.bubbles);
@@ -19,14 +29,10 @@ describe('dispatch()', () => {
         dispatch(element, 'click');
 
         element.removeEventListener('click', cb);
-
-        document.body.removeChild(element);
     });
 
     it('supports specifying event attributes via an optional object', done => {
-        const element = document.createElement('div');
-
-        document.body.appendChild(element);
+        const element = fixture.append('<div></div>');
 
         const detail = {foo: 'bar'};
         const cb = event => {
@@ -46,14 +52,10 @@ describe('dispatch()', () => {
         });
 
         element.removeEventListener('click', cb);
-
-        document.body.removeChild(element);
     });
 
     it('returns the value of element.dispatchEvent', () => {
-        const element = document.createElement('div');
-
-        document.body.appendChild(element);
+        const element = fixture.append('<div></div>');
 
         const cb = event => {
             event.preventDefault();
@@ -66,8 +68,6 @@ describe('dispatch()', () => {
         assert.isFalse(dispatch(element, 'click', {cancelable: true}));
 
         element.removeEventListener('click', cb);
-
-        document.body.removeChild(element);
     });
 
     it('works for non-event-targets', () => {

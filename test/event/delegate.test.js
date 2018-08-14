@@ -1,27 +1,24 @@
 import {delegate, dispatch} from '../..';
+import createFixture from '../fixture';
 
 describe('delegate()', () => {
-    const fixtures = document.createElement('div');
-    fixtures.id = 'fixtures';
-
-    document.body.appendChild(fixtures);
+    let fixture;
 
     beforeEach(() => {
-        fixtures.innerHTML =
+        fixture = createFixture();
+        fixture.append(
             '<div id="item-1">' +
             '  <div id="item-2">' +
             '    <span>hello<span>' +
             '  </div>' +
             '  <div id="item-3"></div>' +
-            '</div>';
+            '</div>'
+        );
     });
 
     afterEach(() => {
-        fixtures.innerHTML = '';
-    });
-
-    after(() => {
-        document.body.removeChild(fixtures);
+        fixture.destroy();
+        fixture = null;
     });
 
     it('delegates the handling of events to an ancestor element', done => {
@@ -123,21 +120,13 @@ describe('delegate()', () => {
     });
 
     it('works for non-event-targets', () => {
-        assert.isFunction(delegate(undefined, 'click', '#foo', () => {
-        }));
-        assert.isFunction(delegate('string', 'click', '#foo', () => {
-        }));
-        assert.isFunction(delegate(true, 'click', '#foo', () => {
-        }));
-        assert.isFunction(delegate(null, 'click', '#foo', () => {
-        }));
-        assert.isFunction(delegate(1, 'click', '#foo', () => {
-        }));
-        assert.isFunction(delegate(1.2, 'click', '#foo', () => {
-        }));
-        assert.isFunction(delegate({foo: 'bar'}, 'click', '#foo', () => {
-        }));
-        assert.isFunction(delegate(['bar'], 'click', '#foo', () => {
-        }));
+        assert.isFunction(delegate(undefined, 'click', '#foo', () => {}));
+        assert.isFunction(delegate('string', 'click', '#foo', () => {}));
+        assert.isFunction(delegate(true, 'click', '#foo', () => {}));
+        assert.isFunction(delegate(null, 'click', '#foo', () => {}));
+        assert.isFunction(delegate(1, 'click', '#foo', () => {}));
+        assert.isFunction(delegate(1.2, 'click', '#foo', () => {}));
+        assert.isFunction(delegate({foo: 'bar'}, 'click', '#foo', () => {}));
+        assert.isFunction(delegate(['bar'], 'click', '#foo', () => {}));
     });
 });

@@ -1,16 +1,24 @@
 import {activeElement} from '../..';
+import createFixture from '../fixture';
 
 describe('activeElement()', () => {
-    it('returns the active element', () => {
-        const element = document.createElement('button');
+    let fixture;
 
-        document.body.appendChild(element);
+    beforeEach(() => {
+        fixture = createFixture();
+    });
+
+    afterEach(() => {
+        fixture.destroy();
+        fixture = null;
+    });
+
+    it('returns the active element', () => {
+        const element = fixture.append('<button></button>');
 
         element.focus();
 
         assert.equal(activeElement(), element);
-
-        document.body.removeChild(element);
     });
 
     it('always returns active element', () => {

@@ -1,28 +1,32 @@
 import {inViewport} from '../..';
+import createFixture from '../fixture';
 
 describe('inViewport()', () => {
-    it('returns true for element in viewport', () => {
-        const element = document.createElement('div');
+    let fixture;
 
-        document.body.appendChild(element);
+    beforeEach(() => {
+        fixture = createFixture();
+    });
+
+    afterEach(() => {
+        fixture.destroy();
+        fixture = null;
+    });
+
+    it('returns true for element in viewport', () => {
+        const element = fixture.append('<div></div>');
 
         assert(inViewport(element));
-
-        document.body.removeChild(element);
     });
 
     it('returns false for element not in viewport', () => {
-        const element = document.createElement('div');
+        const element = fixture.append('<div></div>');
 
         element.style.position = 'absolute';
         element.style.top = '-9999px';
         element.style.left = '-9999px';
 
-        document.body.appendChild(element);
-
         assert.isFalse(inViewport(element));
-
-        document.body.removeChild(element);
     });
 
     it('works for non-elements', () => {

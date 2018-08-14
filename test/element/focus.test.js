@@ -1,16 +1,24 @@
 import {focus} from '../..';
+import createFixture from '../fixture';
 
 describe('focus()', () => {
-    it('focuses element', () => {
-        const element = document.createElement('button');
+    let fixture;
 
-        document.body.appendChild(element);
+    beforeEach(() => {
+        fixture = createFixture();
+    });
+
+    afterEach(() => {
+        fixture.destroy();
+        fixture = null;
+    });
+
+    it('focuses element', () => {
+        const element = fixture.append('<button></button>');
 
         focus(element);
 
         assert.equal(document.activeElement, element);
-
-        document.body.removeChild(element);
     });
 
     it('works for non-elements', () => {
