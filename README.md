@@ -51,6 +51,7 @@ import {
     removeClass,
     hasClass,
     data,
+    focus,
     
     // Event
     ready,
