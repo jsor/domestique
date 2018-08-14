@@ -38,21 +38,21 @@ describe('off()', () => {
     });
 
     it('works for non-event-targets', () => {
-        assert.isFunction(off(undefined, 'click', () => {
+        assert.isUndefined(off(undefined, 'click', () => {
         }));
-        assert.isFunction(off('string', 'click', () => {
+        assert.isUndefined(off('string', 'click', () => {
         }));
-        assert.isFunction(off(true, 'click', () => {
+        assert.isUndefined(off(true, 'click', () => {
         }));
-        assert.isFunction(off(null, 'click', () => {
+        assert.isUndefined(off(null, 'click', () => {
         }));
-        assert.isFunction(off(1, 'click', () => {
+        assert.isUndefined(off(1, 'click', () => {
         }));
-        assert.isFunction(off(1.2, 'click', () => {
+        assert.isUndefined(off(1.2, 'click', () => {
         }));
-        assert.isFunction(off({foo: 'bar'}, 'click', () => {
+        assert.isUndefined(off({foo: 'bar'}, 'click', () => {
         }));
-        assert.isFunction(off(['bar'], 'click', () => {
+        assert.isUndefined(off(['bar'], 'click', () => {
         }));
     });
 });
