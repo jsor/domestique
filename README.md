@@ -275,7 +275,7 @@ const jsonArrayValue = data(element, 'json-array');
 #### focus()
 
 ```
-focus(element: Element): void
+focus(element: Element[, options: object]): void
 ```
 
 Shifts focus to an element.
@@ -284,6 +284,18 @@ Shifts focus to an element.
 
 ```javascript
 focus(element);
+```
+
+Browsers scroll the focused element into view. `focus()` provides an option
+`restoreScrollPosition` to restore scroll positions of all scroll containers of
+the focused element to the state before the element got focus.
+
+##### Example
+
+```javascript
+focus(element, {
+    restoreScrollPosition: true
+});
 ```
 
 #### parents()

@@ -3,6 +3,8 @@ import {create} from '..';
 export default () => {
     function destroy(el) {
         el.parentNode.removeChild(el);
+        document.body.scrollTop = 0;
+        document.body.scrollLeft = 0;
         document.body.focus();
     }
 
