@@ -24,6 +24,6 @@ describe('activeElement()', () => {
     it('always returns active element', () => {
         document.activeElement.blur();
 
-        assert.equal(activeElement(), document.body);
+        assert.instanceOf(activeElement(), Element);
     });
 });
