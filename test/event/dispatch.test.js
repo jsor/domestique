@@ -1,4 +1,4 @@
-import { dispatch } from '../../index';
+import {dispatch} from '../..';
 
 describe('dispatch()', () => {
     it('dispatches an event on the passed DOM element', done => {
@@ -6,7 +6,7 @@ describe('dispatch()', () => {
 
         document.body.appendChild(element);
 
-        const cb = (event) => {
+        const cb = event => {
             assert.isFalse(event.bubbles);
             assert.isFalse(event.cancelable);
             assert.isNull(event.detail);
@@ -29,7 +29,7 @@ describe('dispatch()', () => {
         document.body.appendChild(element);
 
         const detail = {foo: 'bar'};
-        const cb = (event) => {
+        const cb = event => {
             assert(event.bubbles);
             assert(event.cancelable);
             assert.equal(event.detail, detail);
@@ -39,7 +39,11 @@ describe('dispatch()', () => {
 
         element.addEventListener('click', cb);
 
-        dispatch(element, 'click', {bubbles: true, cancelable: true, detail: detail});
+        dispatch(element, 'click', {
+            bubbles: true,
+            cancelable: true,
+            detail
+        });
 
         element.removeEventListener('click', cb);
 
@@ -51,7 +55,7 @@ describe('dispatch()', () => {
 
         document.body.appendChild(element);
 
-        const cb = (event) => {
+        const cb = event => {
             event.preventDefault();
         };
 

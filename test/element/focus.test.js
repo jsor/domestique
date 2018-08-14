@@ -1,4 +1,4 @@
-import { focus } from '../../index';
+import {focus} from '../..';
 
 describe('focus()', () => {
     it('focuses element', () => {

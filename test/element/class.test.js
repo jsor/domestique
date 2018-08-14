@@ -1,4 +1,4 @@
-import { addClass, removeClass , hasClass, create } from '../../index';
+import {addClass, create, hasClass, removeClass} from '../..';
 
 describe('class()', () => {
     it('adds a class to an element', () => {

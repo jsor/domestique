@@ -1,4 +1,4 @@
-import { matches } from '../../index';
+import {matches} from '../..';
 
 describe('matches()', () => {
     const fixtures = document.createElement('div');
@@ -6,15 +6,15 @@ describe('matches()', () => {
 
     document.body.appendChild(fixtures);
 
-    beforeEach(function() {
+    beforeEach(() => {
         fixtures.innerHTML = '<div id="foo" class="bar"></div>';
     });
 
-    afterEach(function() {
+    afterEach(() => {
         fixtures.innerHTML = '';
     });
 
-    after(function() {
+    after(() => {
         document.body.removeChild(fixtures);
     });
 

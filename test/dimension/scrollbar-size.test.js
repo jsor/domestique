@@ -1,4 +1,4 @@
-import { scrollbarSize } from '../../index';
+import {scrollbarSize} from '../..';
 
 describe('scrollbarSize()', () => {
     it('returns a size', () => {

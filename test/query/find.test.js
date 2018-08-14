@@ -1,4 +1,4 @@
-import { find } from '../../index';
+import {find} from '../..';
 
 describe('find()', () => {
     const fixtures = document.createElement('div');
@@ -6,15 +6,15 @@ describe('find()', () => {
 
     document.body.appendChild(fixtures);
 
-    beforeEach(function() {
+    beforeEach(() => {
         fixtures.innerHTML = '<span id="foo" class="bar"><span id="nested" class="baz"></span></span>';
     });
 
-    afterEach(function() {
+    afterEach(() => {
         fixtures.innerHTML = '';
     });
 
-    after(function() {
+    after(() => {
         document.body.removeChild(fixtures);
     });
 

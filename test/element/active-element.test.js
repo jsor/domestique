@@ -1,4 +1,4 @@
-import { activeElement } from '../../index';
+import {activeElement} from '../..';
 
 describe('activeElement()', () => {
     it('returns the active element', () => {
@@ -14,7 +14,7 @@ describe('activeElement()', () => {
     });
 
     it('always returns active element', () => {
-        document.activeElement && document.activeElement.blur();
+        document.activeElement.blur();
 
         assert.equal(activeElement(), document.body);
     });

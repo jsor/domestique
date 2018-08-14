@@ -1,4 +1,4 @@
-import { inViewport } from "../../index";
+import {inViewport} from '../..';
 
 describe('inViewport()', () => {
     it('returns true for element in viewport', () => {

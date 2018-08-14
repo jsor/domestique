@@ -37,8 +37,16 @@
       ]
     },
     "ignores": [
-      "test/**",
-      "karma*"
+      "karma.conf.js"
+    ],
+    "globals": [
+      "after",
+      "afterEach",
+      "assert",
+      "before",
+      "beforeEach",
+      "describe",
+      "it"
     ],
     "envs": [
       "node",

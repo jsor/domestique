@@ -1,4 +1,4 @@
-import { on, off, dispatch } from '../../index';
+import {dispatch, off, on} from '../..';
 
 describe('off()', () => {
     const fixtures = document.createElement('div');
@@ -28,7 +28,7 @@ describe('off()', () => {
         const el = document.getElementById('item-2');
 
         const listener = () => {
-            throw new Error('event fired')
+            throw new Error('event fired');
         };
 
         on(el, 'click', listener);
@@ -38,13 +38,21 @@ describe('off()', () => {
     });
 
     it('works for non-event-targets', () => {
-        assert.isFunction(off(undefined, 'click', () => {}));
-        assert.isFunction(off('string', 'click', () => {}));
-        assert.isFunction(off(true, 'click', () => {}));
-        assert.isFunction(off(null, 'click', () => {}));
-        assert.isFunction(off(1, 'click', () => {}));
-        assert.isFunction(off(1.2, 'click', () => {}));
-        assert.isFunction(off({foo: 'bar'}, 'click', () => {}));
-        assert.isFunction(off(['bar'], 'click', () => {}));
+        assert.isFunction(off(undefined, 'click', () => {
+        }));
+        assert.isFunction(off('string', 'click', () => {
+        }));
+        assert.isFunction(off(true, 'click', () => {
+        }));
+        assert.isFunction(off(null, 'click', () => {
+        }));
+        assert.isFunction(off(1, 'click', () => {
+        }));
+        assert.isFunction(off(1.2, 'click', () => {
+        }));
+        assert.isFunction(off({foo: 'bar'}, 'click', () => {
+        }));
+        assert.isFunction(off(['bar'], 'click', () => {
+        }));
     });
 });

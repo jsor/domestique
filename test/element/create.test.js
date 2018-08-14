@@ -1,4 +1,4 @@
-import { create } from '../../index';
+import {create} from '../..';
 
 describe('create()', () => {
     it('creates a node from a string', () => {
@@ -25,7 +25,7 @@ describe('create()', () => {
         assert.equal(node.tagName.toLowerCase(), 'span');
     });
 
-    it('creates a comment node from a string', function() {
+    it('creates a comment node from a string', () => {
         const node = create('<!--comment-->');
 
         assert.equal(node.nodeType, 8);
@@ -35,79 +35,79 @@ describe('create()', () => {
     // Special nodes which require specific parents
     // See: https://github.com/jquery/jquery/blob/c9aae3565edc840961ecbeee77fb0cb367c46702/src/manipulation/wrapMap.js
 
-    it('creates a <legend/> node from a string', function() {
+    it('creates a <legend/> node from a string', () => {
         const node = create('<legend/>');
 
         assert.equal(node.tagName.toLowerCase(), 'legend');
     });
 
-    it('creates a <option/> node from a string', function() {
+    it('creates a <option/> node from a string', () => {
         const node = create('<option/>');
 
         assert.equal(node.tagName.toLowerCase(), 'option');
     });
 
-    it('creates a <optgroup/> node from a string', function() {
+    it('creates a <optgroup/> node from a string', () => {
         const node = create('<optgroup/>');
 
         assert.equal(node.tagName.toLowerCase(), 'optgroup');
     });
 
-    it('creates a <thead/> node from a string', function() {
+    it('creates a <thead/> node from a string', () => {
         const node = create('<thead/>');
 
         assert.equal(node.tagName.toLowerCase(), 'thead');
     });
 
-    it('creates a <tbody/> node from a string', function() {
+    it('creates a <tbody/> node from a string', () => {
         const node = create('<tbody/>');
 
         assert.equal(node.tagName.toLowerCase(), 'tbody');
     });
 
-    it('creates a <tfoot/> node from a string', function() {
+    it('creates a <tfoot/> node from a string', () => {
         const node = create('<tfoot/>');
 
         assert.equal(node.tagName.toLowerCase(), 'tfoot');
     });
 
-    it('creates a <colgroup/> node from a string', function() {
+    it('creates a <colgroup/> node from a string', () => {
         const node = create('<colgroup/>');
 
         assert.equal(node.tagName.toLowerCase(), 'colgroup');
     });
 
-    it('creates a <col/> node from a string', function() {
+    it('creates a <col/> node from a string', () => {
         const node = create('<col/>');
 
         assert.equal(node.tagName.toLowerCase(), 'col');
     });
 
-    it('creates a <caption/> node from a string', function() {
+    it('creates a <caption/> node from a string', () => {
         const node = create('<caption/>');
 
         assert.equal(node.tagName.toLowerCase(), 'caption');
     });
 
-    it('creates a <tr/> node from a string', function() {
+    it('creates a <tr/> node from a string', () => {
         const node = create('<tr/>');
 
         assert.equal(node.tagName.toLowerCase(), 'tr');
     });
 
-    it('creates a <th/> node from a string', function() {
+    it('creates a <th/> node from a string', () => {
         const node = create('<th/>');
 
         assert.equal(node.tagName.toLowerCase(), 'th');
     });
 
-    it('creates a <td/> node from a string', function() {
+    it('creates a <td/> node from a string', () => {
         const node = create('<td/>');
 
         assert.equal(node.tagName.toLowerCase(), 'td');
     });
 
-    it('returns element as is if already a node', function() {
+    it('returns element as is if already a node', () => {
         const element = document.createElement('div');
         const node = create(element);
 

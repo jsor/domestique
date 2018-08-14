@@ -1,4 +1,4 @@
-import { closest } from '../../index';
+import {closest} from '../..';
 
 describe('closest()', () => {
     const fixtures = document.createElement('div');
@@ -6,7 +6,7 @@ describe('closest()', () => {
 
     document.body.appendChild(fixtures);
 
-    beforeEach(function() {
+    beforeEach(() => {
         fixtures.innerHTML =
             '<div id="div">' +
             '  <p id="p">' +
@@ -15,19 +15,19 @@ describe('closest()', () => {
             '</div>';
     });
 
-    afterEach(function() {
+    afterEach(() => {
         fixtures.innerHTML = '';
     });
 
-    after(function() {
+    after(() => {
         document.body.removeChild(fixtures);
     });
 
     it('calls closest() if present on element', () => {
         let called = 0;
         const fake = {
-            closest: function() {
-                called++
+            closest() {
+                called++;
             }
         };
 

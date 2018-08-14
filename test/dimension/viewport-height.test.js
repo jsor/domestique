@@ -1,4 +1,4 @@
-import { viewportHeight } from "../../index";
+import {viewportHeight} from '../..';
 
 describe('viewportHeight()', () => {
     it('returns viewport height', () => {

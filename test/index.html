@@ -14,15 +14,15 @@
 
         // Browser stack requires mocha to be run on window.onload
         // https://github.com/browserstack/browserstack-runner/issues/94
-        window.onload = function () {
+        window.onload = function() {
             mocha.checkLeaks();
             mocha.run();
         };
     </script>
 </head>
 <body>
-    <div id="mocha"></div>
+<div id="mocha"></div>
 
-    <script src="./build.js"></script>
+<script src="./build.js"></script>
 </body>
 </html>

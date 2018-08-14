@@ -1,4 +1,4 @@
-import { data, create } from '../../index';
+import {create, data} from '../..';
 
 describe('data()', () => {
     it('returns null for non-existent data attributes', () => {
