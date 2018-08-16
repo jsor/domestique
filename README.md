@@ -407,7 +407,9 @@ The function returns another function which can be used to unregister the event 
 ##### Example
 
 ```javascript
-const listener = function () {
+const listener = function (e, target) {
+    target.classList.add('my-target-clicked');
+
     console.log('My Button clicked');
 };
 const options = {

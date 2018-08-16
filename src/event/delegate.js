@@ -25,7 +25,7 @@ export default function delegate(
             remove();
         }
 
-        listener.call(delegateTarget, event);
+        listener.call(delegateTarget, event, delegateTarget);
     }, options);
 
     return remove;

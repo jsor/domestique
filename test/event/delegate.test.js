@@ -50,6 +50,24 @@ describe('delegate()', () => {
         assert.equal(called, 0);
     });
 
+    it('passes delegate target as second argument to the listener', () => {
+        const el = document.getElementById('item-1');
+        const el2 = document.getElementById('item-2');
+
+        let target;
+        const spy = function (e, t) {
+            target = t;
+        };
+
+        delegate(el, 'click', '#item-1', spy);
+
+        dispatch(el2, 'click', {
+            bubbles: true
+        });
+
+        assert.equal(target, el);
+    });
+
     it('binds the listener to the delegate target', () => {
         const el = document.getElementById('item-1');
         const el2 = document.getElementById('item-2');
