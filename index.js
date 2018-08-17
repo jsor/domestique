@@ -14,6 +14,7 @@ import delegate from './src/event/delegate';
 import dispatch from './src/event/dispatch';
 import off from './src/event/off';
 import on from './src/event/on';
+import onTransitionEnd from './src/event/on-transition-end';
 import ready from './src/event/ready';
 
 import closest from './src/query/closest';
@@ -41,6 +42,7 @@ export {
     delegate,
     dispatch,
     on,
+    onTransitionEnd,
     off,
     ready,
 

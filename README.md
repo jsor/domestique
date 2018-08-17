@@ -57,6 +57,7 @@ import {
     // Event
     ready,
     on,
+    onTransitionEnd,
     off,
     delegate,
     dispatch,
@@ -88,6 +89,7 @@ API
 * [Event](#event)
   * [ready()](#ready)
   * [on()](#on)
+  * [onTransitionEnd()](#ontransitionend)
   * [off()](#off)
   * [delegate()](#delegate)
   * [dispatch()](#dispatch)
@@ -368,6 +370,34 @@ const remove = on(
     'click',
     listener,
     options
+);
+
+remove(); // Remove event listener
+```
+
+#### onTransitionEnd()
+
+```
+onTransitionEnd(target: EventTarget, listener: EventListener): function
+```
+
+Registers a one-time `listener` for the `transitionend` event on `target`.
+
+The function returns another function which can be used to unregister the event listener.
+
+##### Example
+
+```javascript
+const target = document.querySelector('.my-element');
+const listener = function (target) {
+    target.classList.add('transition-ended');
+
+    console.log('Transition ended');
+};
+
+const remove = onTransitionEnd(
+    target,
+    listener
 );
 
 remove(); // Remove event listener
