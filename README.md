@@ -540,6 +540,14 @@ Returns `true` if the `element` would be selected by the specified `selector`,
 const isParagraph = matches(element, 'p');
 ```
 
+Thank You
+---------
+
+* [BrowserStack](https://www.browserstack.com/) - Provides VMs for automated testing.
+* [GitHub](https://github.com/) - Provides Git repository hosting.
+* [npm](https://www.npmjs.com/) - Provides the package manager for JavaScript.
+* [TravisCI](https://travis-ci.org/) - Provides a build server.
+
 License
 -------
 
