@@ -40,17 +40,12 @@
       "karma.conf.js"
     ],
     "globals": [
-      "after",
-      "afterEach",
-      "assert",
-      "before",
-      "beforeEach",
-      "describe",
-      "it"
+      "assert"
     ],
     "envs": [
       "node",
-      "browser"
+      "browser",
+      "mocha"
     ]
   },
   "scripts": {
