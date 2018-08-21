@@ -53,6 +53,7 @@ import {
     data,
     focus,
     parents,
+    render,
     
     // Event
     ready,
@@ -86,6 +87,7 @@ API
   * [data()](#data)
   * [focus()](#focus)
   * [parents()](#parents)
+  * [render()](#render)
 * [Event](#event)
   * [ready()](#ready)
   * [on()](#on)
@@ -313,6 +315,30 @@ Returns an array of the element's parent elements.
 ```javascript
 const parentElements = parents(element);
 ```
+
+#### render()
+
+```
+render(html: string): object
+```
+
+Creates and returns DOM element references from a HTML string.
+
+Elements must have a `ref` attribute with the reference name. The value of this
+attribute will get mapped to the property name of the returned object.
+
+##### Example
+
+```javascript
+const {list, 'list-items': listItems} = render(`
+<ul ref="list">
+    <li ref="list-items[]"></l>
+    <li ref="list-items[]"></l>
+</ul>
+`);
+```
+
+> Note: The `ref` attributes will be removed from the returned elements.
 
 ### Event
 

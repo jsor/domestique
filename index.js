@@ -9,6 +9,7 @@ import {addClass, hasClass, removeClass} from './src/element/class';
 import data from './src/element/data';
 import focus from './src/element/focus';
 import parents from './src/element/parents';
+import render from './src/element/render';
 
 import delegate from './src/event/delegate';
 import dispatch from './src/event/dispatch';
@@ -37,6 +38,7 @@ export {
     data,
     focus,
     parents,
+    render,
 
     // Event
     delegate,
