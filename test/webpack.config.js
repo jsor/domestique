@@ -34,12 +34,11 @@ module.exports = {
                 ]
             },
             {
-                test: /\.js$|\.jsx$/,
+                test: /\.js$/,
                 use: {
                     loader: 'istanbul-instrumenter-loader',
                     options: {esModules: true}
                 },
-                enforce: 'post',
                 include: path.resolve('src/')
             }
         ]
