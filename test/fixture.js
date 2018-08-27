@@ -1,28 +1,24 @@
 import {create} from '..';
 
-export default () => {
-    function destroy(el) {
-        el.parentNode.removeChild(el);
-        document.body.scrollTop = 0;
-        document.body.scrollLeft = 0;
-        document.body.focus();
-    }
-
-    const previous = document.getElementById('fixture');
-
-    if (previous) {
-        destroy(previous);
-    }
-
+export default function fixture() {
     const root = document.createElement('div');
 
-    root.id = 'fixture';
+    root.id = 'domestique-fixture';
 
     document.body.appendChild(root);
 
     return {
         root,
-        destroy: destroy.bind(undefined, root),
+        destroy() {
+            document.body.removeChild(root);
+
+            root.textContent = '';
+
+            document.body.scrollTop = 0;
+            document.body.scrollLeft = 0;
+
+            document.body.focus();
+        },
         append(html) {
             const element = create(html);
 
@@ -31,4 +27,4 @@ export default () => {
             return element;
         }
     };
-};
+}
