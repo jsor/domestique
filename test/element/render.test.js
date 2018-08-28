@@ -27,6 +27,14 @@ describe('render()', () => {
         assert.equal(node.tagName.toLowerCase(), 'span');
     });
 
+    it('returns no references for text string', () => {
+        assert.deepEqual(render('text'), {});
+    });
+
+    it('returns no references for empty string', () => {
+        assert.deepEqual(render(''), {});
+    });
+
     it('creates references for multiple root element', () => {
         const {node1, node2} = render('<p ref="node1"></p><span ref="node2"/>');
 

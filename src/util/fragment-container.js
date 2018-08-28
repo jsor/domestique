@@ -1,6 +1,6 @@
 /*
  * Ported from jQuery's html()
- * https://github.com/jquery/jquery/blob/c9aae3565edc840961ecbeee77fb0cb367c46702/src/manipulation/buildFragment.js
+ * https://github.com/jquery/jquery/blob/6153eb0fd401cda90bf2007335cd4338093d38f0/src/manipulation/buildFragment.js
  */
 
 const wrapMap = {
@@ -19,12 +19,10 @@ wrapMap.caption = wrapMap.thead;
 
 wrapMap.th = wrapMap.td;
 
-export default function fragmentContainer(html) {
-    if (html === '') {
-        return document.createTextNode(' ');
-    }
+const regexpTag = /<([a-z][^/\0>\u0020\t\r\n\f]*)/i;
 
-    const match = /<([a-z][^/\0>\u0020\t\r\n\f]*)/i.exec(html);
+export default function fragmentContainer(html) {
+    const match = regexpTag.exec(html);
 
     const tag = match ? match[0].replace(/</g, '').replace(/>/g, '') : '_';
     const map = wrapMap[tag] || wrapMap._;

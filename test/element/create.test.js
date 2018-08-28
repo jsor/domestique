@@ -28,6 +28,20 @@ describe('create()', () => {
         assert.equal(node.textContent, 'comment');
     });
 
+    it('returns text node for text string', () => {
+        const node = create('text');
+
+        assert.equal(node.nodeType, 3);
+        assert.equal(node.textContent, 'text');
+    });
+
+    it('returns text node for empty string', () => {
+        const node = create('');
+
+        assert.equal(node.nodeType, 3);
+        assert.equal(node.textContent, '');
+    });
+
     it('returns last element for multiple root element', () => {
         const node = create('<p></p><span/>');
 

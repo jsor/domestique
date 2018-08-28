@@ -8,10 +8,12 @@ export default function create(html) {
     const container = fragmentContainer(html);
     const element = container.lastChild;
 
-    if (element) {
-        // Detach element from container
-        container.removeChild(element);
+    if (!element) {
+        return document.createTextNode('');
     }
+
+    // Detach element from container
+    container.removeChild(element);
 
     return element;
 }
