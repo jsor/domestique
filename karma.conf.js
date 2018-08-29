@@ -1,4 +1,4 @@
-const webpackConfig = require('./test/webpack.config');
+const path = require('path');
 
 module.exports = function(config) {
     const {env} = process;
@@ -25,7 +25,25 @@ module.exports = function(config) {
             'test/index.js': ['webpack']
         },
 
-        webpack: webpackConfig,
+        webpack: {
+            mode: 'production',
+            optimization: {
+                minimize: false
+            },
+            module: {
+                strictExportPresence: true,
+                rules: [
+                    {
+                        test: /\.js$/,
+                        use: {
+                            loader: 'istanbul-instrumenter-loader',
+                            options: {esModules: true}
+                        },
+                        include: path.resolve(__dirname, 'src/')
+                    }
+                ]
+            }
+        },
 
         coverageIstanbulReporter: {
             reports: ['text', 'html'],

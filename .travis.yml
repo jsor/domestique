@@ -18,3 +18,4 @@ before_script:
 script:
   - npm test
   - npm run test:browserstack
+  - npm run test:browserstack-legacy
