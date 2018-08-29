@@ -9,6 +9,7 @@ addons:
 
 cache:
   directories:
+    - $HOME/.compat-data
     - node_modules
 
 before_script:
