@@ -69,15 +69,15 @@ module.exports = function(config) {
         autoWatch: true,
 
         customLaunchers: {
-            ChromeCI: {
-                base: 'Chrome',
+            ChromeHeadlessNoSandbox: {
+                base: 'ChromeHeadless',
                 flags: ['--no-sandbox'],
             },
         },
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: [env.CI === 'true' ? 'ChromeCI' : 'Chrome', 'Firefox'],
+        browsers: [env.CI === 'true' ? 'ChromeHeadlessNoSandbox' : 'ChromeHeadless', 'FirefoxHeadless'],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
