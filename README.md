@@ -15,7 +15,7 @@ npm install domestique
 
 > **Note**: This library is written as ES2015 code and published as such to
   [npm](https://www.npmjs.com/package/domestique).
-  Read the [Compatibility](#Compatibility) section for more information.
+  Read the [Compatibility](#compatibility) section for more information.
 
 Usage
 -----
