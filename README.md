@@ -13,25 +13,9 @@ Installation
 npm install domestique
 ```
 
-**Note**: This library is written as ES2015 code and published as such to 
-[npm](https://www.npmjs.com/package/domestique).
-That means, code from `domestique` must *not* be excluded from transpilation.
-
-If you're using webpack and babel, that could look like:
-
-```javascript
-{
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules\/(?!domestique)/,
-                loader: 'babel-loader'
-            }
-        ]
-    }
-}
-```
+> **Note**: This library is written as ES2015 code and published as such to
+  [npm](https://www.npmjs.com/package/domestique).
+  Read the [Compatibility](#Compatibility) section for more information.
 
 Usage
 -----
@@ -565,6 +549,45 @@ Returns `true` if the `element` would be selected by the specified `selector`,
 ```javascript
 const isParagraph = matches(element, 'p');
 ```
+
+Compatibility
+-------------
+
+This library is written as ES2015 code and published as such to
+[npm](https://www.npmjs.com/package/domestique).
+It is compatible with
+[modern browsers](http://browserl.ist/?q=Chrome+%3E%3D+60%2C+Edge+%3E%3D+15%2C+Firefox+%3E%3D+54%2C+iOS+%3E%3D+10.3%2C+Safari+%3E%3D+10.1)
+which natively support `<script type="module">`.
+
+If support for older browsers is required, code from `domestique` must be
+transpiled, eg. by using [Babel](https://github.com/babel/babel).
+
+Most bundlers (like [Webpack](https://github.com/babel/babel-loader#usage) and
+[Rollup](https://github.com/rollup/rollup-plugin-babel#usage)) recommend
+to not transpile anything from the `node_modules/` directory.
+
+It must be ensured, that code from `domestique` is **not** excluded from
+transpilation.
+
+If you're using Webpack and Babel, that could look like:
+
+```javascript
+{
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules\/(?!domestique)/,
+                loader: 'babel-loader'
+            }
+        ]
+    }
+}
+```
+
+After transpilation, `domestique` supports the
+[most common browsers including IE 10](http://browserl.ist/?q=defaults%2C+IE+10)
+without polyfills.
 
 Thank You
 ---------
