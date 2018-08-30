@@ -22,12 +22,12 @@ Usage
 
 ```javascript
 import {
-    // Dimension
+     // Dimension
+    inViewport,
     scrollbarSize,
-    viewport,
     viewportHeight,
     viewportWidth,
-        
+
     // Element
     activeElement,
     create,
@@ -38,18 +38,18 @@ import {
     focus,
     parents,
     render,
-    
+
     // Event
-    ready,
+    delegate,
+    dispatch,
     on,
     onTransitionEnd,
     off,
-    delegate,
-    dispatch,
+    ready,
 
     // Query
-    find,
     closest,
+    find,
     matches
 } from 'domestique';
 ```
@@ -73,15 +73,15 @@ API
   * [parents()](#parents)
   * [render()](#render)
 * [Event](#event)
-  * [ready()](#ready)
+  * [delegate()](#delegate)
+  * [dispatch()](#dispatch)
   * [on()](#on)
   * [onTransitionEnd()](#ontransitionend)
   * [off()](#off)
-  * [delegate()](#delegate)
-  * [dispatch()](#dispatch)
+  * [ready()](#ready)
 * [Query](#query)
-  * [find()](#find)
   * [closest()](#closest)
+  * [find()](#find)
   * [matches()](#matches)
 
 ### Dimension
@@ -326,22 +326,70 @@ const {list, 'list-items': listItems} = render(`
 
 ### Event
 
-#### ready()
+#### delegate()
 
 ```
-ready(listener: function): void
+delegate(target: EventTarget, type: string, selector: string, listener: EventListener[, options: object]): function
 ```
 
-Registers a listener to be called once the DOM is ready.
+Registers a `listener` for the event `type` on `target` with `options` that
+processes events from descendant elements of `target` matching the specified
+`selector`.
 
-Unlike `DOMContentLoaded`, this also works when called after the DOM was loaded.
+The function returns another function which can be used to unregister the event listener.
 
 ##### Example
 
 ```javascript
-ready(function () {
-    console.log('DOM is ready!');
-});
+const listener = function (e, target) {
+    target.classList.add('my-target-clicked');
+
+    console.log('My Button clicked');
+};
+const options = {
+    passive: true
+};
+
+const remove = delegate(
+    document, // Listen on document
+    'click',
+    '.my-button',
+    listener,
+    options
+);
+
+remove(); // Remove event listener
+```
+
+#### dispatch()
+
+```
+dispatch(target: EventTarget, type: string[, eventInit: CustomEventInit]): bool
+```
+
+Dispatches a [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) 
+`type` at the specified `target` optionally using the `eventInit` options.
+
+The function returns `false` if the event is cancelable and at least one of the
+event handlers which handled this event called `Event.preventDefault()`.
+Otherwise it returns `true`.
+
+##### Example
+
+```javascript
+const clickNotCancelled = dispatch(document, 'click');
+
+const myEventNotCancelled = dispatch(
+    document.querySelector('.my-button'),
+    'my:event',
+    {
+        bubbles: true,
+        cancelable: true,
+        detail: {
+            foo: 'bar'
+        }
+    }
+);
 ```
 
 #### on()
@@ -432,73 +480,42 @@ off(
 );
 ```
 
-#### delegate()
+#### ready()
 
 ```
-delegate(target: EventTarget, type: string, selector: string, listener: EventListener[, options: object]): function
+ready(listener: function): void
 ```
 
-Registers a `listener` for the event `type` on `target` with `options` that
-processes events from descendant elements of `target` matching the specified
-`selector`.
+Registers a listener to be called once the DOM is ready.
 
-The function returns another function which can be used to unregister the event listener.
+Unlike `DOMContentLoaded`, this also works when called after the DOM was loaded.
 
 ##### Example
 
 ```javascript
-const listener = function (e, target) {
-    target.classList.add('my-target-clicked');
-
-    console.log('My Button clicked');
-};
-const options = {
-    passive: true
-};
-
-const remove = delegate(
-    document, // Listen on document
-    'click',
-    '.my-button',
-    listener,
-    options
-);
-
-remove(); // Remove event listener
-```
-
-#### dispatch()
-
-```
-dispatch(target: EventTarget, type: string[, eventInit: CustomEventInit]): bool
-```
-
-Dispatches a [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) 
-`type` at the specified `target` optionally using the `eventInit` options.
-
-The function returns `false` if the event is cancelable and at least one of the
-event handlers which handled this event called `Event.preventDefault()`.
-Otherwise it returns `true`.
-
-##### Example
-
-```javascript
-const clickNotCancelled = dispatch(document, 'click');
-
-const myEventNotCancelled = dispatch(
-    document.querySelector('.my-button'),
-    'my:event',
-    {
-        bubbles: true,
-        cancelable: true,
-        detail: {
-            foo: 'bar'
-        }
-    }
-);
+ready(function () {
+    console.log('DOM is ready!');
+});
 ```
 
 ### Query
+
+#### closest()
+
+```
+closest(element: Element, selector: string): Element
+```
+
+Returns the closest ancestor of the `element` (or the `element` itself) which
+matches the specified `selector`. 
+
+If there isn't such an ancestor, it returns `null`.
+
+##### Example
+
+```javascript
+const closestParagraph = closest(element, 'p');
+```
 
 #### find()
 
@@ -516,23 +533,6 @@ argument.
 const paragraphs = find('p');
 
 const spansInsideFirstParagraph = find('spans', paragraphs[0]);
-```
-
-#### closest()
-
-```
-closest(element: Element, selector: string): Element
-```
-
-Returns the closest ancestor of the `element` (or the `element` itself) which
-matches the specified `selector`. 
-
-If there isn't such an ancestor, it returns `null`.
-
-##### Example
-
-```javascript
-const closestParagraph = closest(element, 'p');
 ```
 
 #### matches()
