@@ -564,10 +564,8 @@ transpiled, eg. by using [Babel](https://github.com/babel/babel).
 
 Most bundlers (like [Webpack](https://github.com/babel/babel-loader#usage) and
 [Rollup](https://github.com/rollup/rollup-plugin-babel#usage)) recommend
-to not transpile anything from the `node_modules/` directory.
-
-It must be ensured, that code from `domestique` is **not** excluded from
-transpilation.
+to not transpile anything from the `node_modules/` directory. It must be
+ensured, that code from `domestique` is **not** excluded from transpilation.
 
 If you're using Webpack and Babel, that could look like:
 
