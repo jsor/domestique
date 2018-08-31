@@ -590,8 +590,9 @@ are descendants of the `document` or the `element` specified as optional second
 argument.
 
 Unlike [`focusable()`](#focusable), the array **only** includes elements which
-are focusable by the keyboard. Elements that are only focusable by script 
-(`element.focus()`) and possibly the mouse (or pointer) are excluded.
+are focusable by the keyboard (by pressing the <kbd>TAB</kbd> and
+<kbd>SHIFT</kbd>+<kbd>TAB</kbd> keys). Elements that are only focusable by
+script (`element.focus()`) and possibly the mouse (or pointer) are excluded.
 
 > **Note:** The elements in the array are ordered according to the 
   [sequential focus navigation order](https://html.spec.whatwg.org/multipage/interaction.html#sequential-focus-navigation)
