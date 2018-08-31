@@ -20,7 +20,9 @@ import ready from './src/event/ready';
 
 import closest from './src/query/closest';
 import find from './src/query/find';
+import focusable from './src/query/focusable';
 import matches from './src/query/matches';
+import tabbable from './src/query/tabbable';
 
 export {
     // Dimension
@@ -51,5 +53,7 @@ export {
     // Query
     closest,
     find,
-    matches
+    focusable,
+    matches,
+    tabbable
 };

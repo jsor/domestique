@@ -50,7 +50,9 @@ import {
     // Query
     closest,
     find,
-    matches
+    focusable,
+    matches,
+    tabbable
 } from 'domestique';
 ```
 
@@ -82,7 +84,9 @@ API
 * [Query](#query)
   * [closest()](#closest)
   * [find()](#find)
+  * [focusable()](#focusable)
   * [matches()](#matches)
+  * [tabbable()](#tabbable)
 
 ### Dimension
 
@@ -535,6 +539,31 @@ const paragraphs = find('p');
 const spansInsideFirstParagraph = find('spans', paragraphs[0]);
 ```
 
+#### focusable()
+
+```
+focusable([, element: Element]): array
+```
+
+Returns an `array` of focusable elements in the DOM which are
+descendants of the `document` or the `element` specified as optional second 
+argument.
+
+Unlike [`tabbable()`](#tabbable), the array also includes elements which are not
+focusable by the keyboard, but only by script (`element.focus()`) and possibly
+the mouse (or pointer). Usually, those are elements with a negative `tabindex`
+attribute value, like `-1`.
+
+> **Note:** The elements in the array are ordered according to the 
+  [sequential focus navigation order](https://html.spec.whatwg.org/multipage/interaction.html#sequential-focus-navigation)
+  which may be different from the DOM order.
+
+##### Example
+
+```javascript
+const focusableElements = focusable();
+```
+
 #### matches()
 
 ```
@@ -548,6 +577,30 @@ Returns `true` if the `element` would be selected by the specified `selector`,
 
 ```javascript
 const isParagraph = matches(element, 'p');
+```
+
+#### tabbable()
+
+```
+tabbable([, element: Element]): array
+```
+
+Returns an `array` of keyboard focusable ("tabbable") elements in the DOM which
+are descendants of the `document` or the `element` specified as optional second 
+argument.
+
+Unlike [`focusable()`](#focusable), the array **only** includes elements which
+are focusable by the keyboard. Elements that are only focusable by script 
+(`element.focus()`) and possibly the mouse (or pointer) are excluded.
+
+> **Note:** The elements in the array are ordered according to the 
+  [sequential focus navigation order](https://html.spec.whatwg.org/multipage/interaction.html#sequential-focus-navigation)
+  which may be different from the DOM order.
+
+##### Example
+
+```javascript
+const tabbableElements = tabbable();
 ```
 
 Compatibility
