@@ -13,7 +13,7 @@ Installation
 npm install domestique
 ```
 
-> **Note**: This library is written as ES2015 code and published as such to
+> **Note:** This library is written as ES2015 code and published as such to
   [npm](https://www.npmjs.com/package/domestique).
   Read the [Compatibility](#compatibility) section for more information.
 
@@ -122,9 +122,9 @@ viewportHeight(): number
 
 Returns the viewport height.
 
-Note: The height represent the CSS viewport height
-([@media (height)](https://www.w3.org/TR/mediaqueries-4/#height)) including the
-size of a rendered scroll bar (if any).
+> **Note:** The height represent the CSS viewport height
+  ([@media (height)](https://www.w3.org/TR/mediaqueries-4/#height)) including the
+  size of a rendered scroll bar (if any).
 
 #### Example
 
@@ -140,9 +140,9 @@ viewportWidth(): number
 
 Returns the viewport width.
 
-Note: The width represent the CSS viewport width
-([@media (width)](https://www.w3.org/TR/mediaqueries-4/#width)) including the
-size of a rendered scroll bar (if any).
+> **Note:** The width represent the CSS viewport width
+  ([@media (width)](https://www.w3.org/TR/mediaqueries-4/#width)) including the
+  size of a rendered scroll bar (if any).
 
 #### Example
 
@@ -322,7 +322,7 @@ const {list, 'list-items': listItems} = render(`
 `);
 ```
 
-> Note: The `ref` attributes will be removed from the returned elements.
+> **Note:** The `ref` attributes will be removed from the returned elements.
 
 ### Event
 
