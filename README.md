@@ -542,7 +542,7 @@ const spansInsideFirstParagraph = find('spans', paragraphs[0]);
 #### focusable()
 
 ```
-focusable([, element: Element]): array
+focusable([element: Element]): array
 ```
 
 Returns an `array` of focusable elements in the DOM which are
@@ -582,7 +582,7 @@ const isParagraph = matches(element, 'p');
 #### tabbable()
 
 ```
-tabbable([, element: Element]): array
+tabbable([element: Element]): array
 ```
 
 Returns an `array` of keyboard focusable ("tabbable") elements in the DOM which
