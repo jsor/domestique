@@ -27,9 +27,9 @@
     "index.js"
   ],
   "browserslist": [
-    "Chrome >= 60",
-    "Edge >= 15",
-    "Firefox >= 54",
+    "Chrome >= 61",
+    "Edge >= 16",
+    "Firefox >= 60",
     "iOS >= 10.3",
     "Safari >= 10.1"
   ],
@@ -58,7 +58,7 @@
   "scripts": {
     "build:test:browserstack": "webpack test/index.js --debug --mode none --progress --output test/build.js",
     "build:test:browserstack-legacy": "BROWSERSLIST='defaults, IE >= 10' webpack test/index.js --debug --mode none --progress --output test/build-legacy.js --module-bind 'js=babel-loader?presets[]=babel-preset-env'",
-    "compat": "compat --recursive --target src/ test/ --jsEnvs chrome60 edge15 firefox54 ios10_3 safari10_1 --htmlEnvs chrome60 edge15 firefox54 ios_saf10.3 safari10.1",
+    "compat": "compat --recursive --target src/ test/ --jsEnvs chrome61 edge16 firefox60 ios10_3 safari10_1 --htmlEnvs chrome61 edge16 firefox60 ios_saf10.3 safari10.1",
     "dev": "karma start",
     "lint": "xo",
     "test": "npm run lint && npm run compat && karma start --single-run",
