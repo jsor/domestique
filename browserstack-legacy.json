@@ -4,6 +4,7 @@
     "exit_with_fail": true,
     "browsers": [
         "chrome_49",
+        "edge_15",
         "firefox_52",
         "ie_10",
         "ie_11",
