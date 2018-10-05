@@ -8,6 +8,8 @@ import create from './src/element/create';
 import {addClass, hasClass, removeClass} from './src/element/class';
 import data from './src/element/data';
 import focus from './src/element/focus';
+import isFocusable from './src/element/is-focusable';
+import isTabbable from './src/element/is-tabbable';
 import parents from './src/element/parents';
 import render from './src/element/render';
 
@@ -39,6 +41,8 @@ export {
     hasClass,
     data,
     focus,
+    isFocusable,
+    isTabbable,
     parents,
     render,
 

@@ -36,6 +36,8 @@ import {
     hasClass,
     data,
     focus,
+    isFocusable,
+    isTabbable,
     parents,
     render,
 
@@ -72,6 +74,8 @@ API
   * [hasClass()](#hasclass)
   * [data()](#data)
   * [focus()](#focus)
+  * [isFocusable()](#isfocusable)
+  * [isTabbable()](#istabbable)
   * [parents()](#parents)
   * [render()](#render)
 * [Event](#event)
@@ -288,6 +292,44 @@ the focused element to the state before the element got focus.
 focus(element, {
     restoreScrollPosition: true
 });
+```
+
+#### isFocusable()
+
+```
+isFocusable(element: Element): bool
+```
+
+Checks whether an element is focusable.
+
+Unlike [`isTabbable()`](#istabbable), the function also returns `true` for
+elements which are not focusable by the keyboard, but only by script 
+(`element.focus()`) and possibly the mouse (or pointer). Usually, those are
+elements with a negative `tabindex` attribute value, like `-1`.
+
+##### Example
+
+```javascript
+const isFocusableElement = isFocusable(element);
+```
+
+#### isTabbable()
+
+```
+isTabbable(element: Element): bool
+```
+
+Checks whether an element is tabbable.
+
+Unlike [`isFocusable()`](#isfocusable), the function returns `true` **only** for
+elements which are focusable by the keyboard (by pressing the <kbd>TAB</kbd> and
+<kbd>SHIFT</kbd>+<kbd>TAB</kbd> keys). Elements that are only focusable by
+script (`element.focus()`) and possibly the mouse (or pointer) are excluded.
+
+##### Example
+
+```javascript
+const isFocusableElement = isFocusable(element);
 ```
 
 #### parents()
