@@ -588,7 +588,7 @@ focusable([element: Element]): array
 ```
 
 Returns an `array` of focusable elements in the DOM which are
-descendants of the `document` or the `element` specified as optional second 
+descendants of the `document` or the `element` specified as optional first
 argument.
 
 Unlike [`tabbable()`](#tabbable), the array also includes elements which are not
@@ -628,7 +628,7 @@ tabbable([element: Element]): array
 ```
 
 Returns an `array` of keyboard focusable ("tabbable") elements in the DOM which
-are descendants of the `document` or the `element` specified as optional second 
+are descendants of the `document` or the `element` specified as optional first
 argument.
 
 Unlike [`focusable()`](#focusable), the array **only** includes elements which
