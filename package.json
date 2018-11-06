@@ -61,7 +61,7 @@
     "compat": "compat --recursive --target src/ test/ --jsEnvs chrome61 edge16 firefox60 ios10_3 safari10_1 --htmlEnvs chrome61 edge16 firefox60 ios_saf10.3 safari10.1",
     "dev": "karma start",
     "lint": "xo",
-    "test": "npm run lint && npm run compat && karma start --single-run",
+    "test": "npm run lint && karma start --single-run",
     "test:browserstack": "npm run build:test:browserstack && browserstack-runner",
     "test:browserstack-legacy": "npm run build:test:browserstack-legacy && BROWSERSTACK_JSON=browserstack-legacy.json browserstack-runner"
   },
