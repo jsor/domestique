@@ -23,16 +23,6 @@ describe('focus()', () => {
         assert.equal(document.activeElement, element, 'Is activeElement after focus');
     });
 
-    it('scrolls focused element into view by default', () => {
-        const element = fixture.append('<button style="display:block;margin-top:9999px"></button>');
-
-        assert.isFalse(inViewport(element), 'Not in viewport before focus');
-
-        focus(element);
-
-        assert(inViewport(element), 'In viewport after focus');
-    });
-
     it('works for non-elements', () => {
         focus(undefined);
         focus('string');
