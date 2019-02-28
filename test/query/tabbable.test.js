@@ -128,7 +128,7 @@ describe('tabbable()', () => {
     });
 
     it('orders elements by tabindex', () => {
-        const elements = tabbable(document.getElementById('tabIndexOrder'));
+        const elements = tabbable(document.querySelector('#tabIndexOrder'));
 
         assert.deepEqual(elementIds(elements), [
             '#tabIndexOrder-spanTabindex0',

@@ -133,7 +133,7 @@ describe('focusable()', () => {
     });
 
     it('orders elements by tabindex', () => {
-        const elements = focusable(document.getElementById('tabIndexOrder'));
+        const elements = focusable(document.querySelector('#tabIndexOrder'));
 
         assert.deepEqual(elementIds(elements), [
             '#tabIndexOrder-spanTabindex0',

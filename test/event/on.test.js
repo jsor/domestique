@@ -22,7 +22,7 @@ describe('on()', () => {
     });
 
     it('adds a listener', done => {
-        const el = document.getElementById('item-2');
+        const el = document.querySelector('#item-2');
 
         on(el, 'click', () => done());
 
@@ -30,7 +30,7 @@ describe('on()', () => {
     });
 
     it('removes the listener when remove() is called', () => {
-        const el = document.getElementById('item-2');
+        const el = document.querySelector('#item-2');
         const remove = on(el, 'click', () => {
             throw new Error('event fired');
         });
@@ -41,7 +41,7 @@ describe('on()', () => {
     });
 
     it('invokes a listener only once', () => {
-        const el = document.getElementById('item-2');
+        const el = document.querySelector('#item-2');
         let called = 0;
 
         on(el, 'click', () => {

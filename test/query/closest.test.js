@@ -34,9 +34,9 @@ describe('closest()', () => {
     });
 
     it('finds a matching parent from a CSS selector', () => {
-        const div = document.getElementById('div');
-        const p = document.getElementById('p');
-        const em = document.getElementById('em');
+        const div = document.querySelector('#div');
+        const p = document.querySelector('#p');
+        const em = document.querySelector('#em');
 
         p.closest = undefined;
         em.closest = undefined;
@@ -52,8 +52,8 @@ describe('closest()', () => {
     });
 
     it('does match the element itself', () => {
-        const em = document.getElementById('em');
-        const em2 = document.getElementById('em2');
+        const em = document.querySelector('#em');
+        const em2 = document.querySelector('#em2');
 
         em.closest = undefined;
         em2.closest = undefined;
@@ -65,7 +65,7 @@ describe('closest()', () => {
     });
 
     it('does not match detached elements', () => {
-        const em = document.getElementById('em');
+        const em = document.querySelector('#em');
 
         em.closest = undefined;
 
@@ -90,7 +90,7 @@ describe('closest()', () => {
     });
 
     it('throws syntax error for invalid selector', () => {
-        const div = document.getElementById('div');
+        const div = document.querySelector('#div');
 
         assert.throws(() => {
             closest(div, '');

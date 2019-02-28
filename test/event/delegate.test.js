@@ -22,8 +22,8 @@ describe('delegate()', () => {
     });
 
     it('delegates the handling of events to an ancestor element', done => {
-        const el = document.getElementById('item-1');
-        const el2 = document.getElementById('item-2');
+        const el = document.querySelector('#item-1');
+        const el2 = document.querySelector('#item-2');
 
         delegate(el, 'click', '#item-2', () => done());
 
@@ -33,8 +33,8 @@ describe('delegate()', () => {
     });
 
     it('does not invoke listener if selector does not match', () => {
-        const el = document.getElementById('item-1');
-        const el2 = document.getElementById('item-2');
+        const el = document.querySelector('#item-1');
+        const el2 = document.querySelector('#item-2');
 
         let called = 0;
         const spy = () => {
@@ -51,8 +51,8 @@ describe('delegate()', () => {
     });
 
     it('passes delegate target as second argument to the listener', () => {
-        const el = document.getElementById('item-1');
-        const el2 = document.getElementById('item-2');
+        const el = document.querySelector('#item-1');
+        const el2 = document.querySelector('#item-2');
 
         let target;
         const spy = function (e, t) {
@@ -69,8 +69,8 @@ describe('delegate()', () => {
     });
 
     it('binds the listener to the delegate target', () => {
-        const el = document.getElementById('item-1');
-        const el2 = document.getElementById('item-2');
+        const el = document.querySelector('#item-1');
+        const el2 = document.querySelector('#item-2');
 
         let thisValue;
         const spy = function () {
@@ -87,8 +87,8 @@ describe('delegate()', () => {
     });
 
     it('returns a off method', () => {
-        const el = document.getElementById('item-1');
-        const el2 = document.getElementById('item-2');
+        const el = document.querySelector('#item-1');
+        const el2 = document.querySelector('#item-2');
 
         let called = 0;
         const spy = () => {
@@ -111,9 +111,9 @@ describe('delegate()', () => {
     });
 
     it('invokes a listener only once', () => {
-        const el = document.getElementById('item-1');
-        const el2 = document.getElementById('item-2');
-        const el3 = document.getElementById('item-3');
+        const el = document.querySelector('#item-1');
+        const el2 = document.querySelector('#item-2');
+        const el3 = document.querySelector('#item-3');
 
         let called = 0;
         const spy = () => {

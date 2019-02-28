@@ -17,7 +17,7 @@ describe('find()', () => {
     });
 
     it('queries against a CSS selector', () => {
-        const span = document.getElementById('foo');
+        const span = document.querySelector('#foo');
 
         assert.equal(find('span', span).length, 1);
 

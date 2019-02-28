@@ -22,7 +22,7 @@ describe('off()', () => {
     });
 
     it('removes a listener', () => {
-        const el = document.getElementById('item-2');
+        const el = document.querySelector('#item-2');
 
         const listener = () => {
             throw new Error('event fired');

@@ -8,7 +8,7 @@ export default function activeElement() {
         const {activeElement} = document;
 
         return activeElement && activeElement.nodeName ? activeElement : document.body;
-    } catch (e) {
+    } catch (error) {
         return document.body;
     }
 }

@@ -16,9 +16,9 @@ describe('parents()', () => {
     it('returns array fo parent elements', () => {
         fixture.append('<p id="p"><em id="em"><sup id="sup"></sup><em></p>');
 
-        const p = document.getElementById('p');
-        const em = document.getElementById('em');
-        const sup = document.getElementById('sup');
+        const p = document.querySelector('#p');
+        const em = document.querySelector('#em');
+        const sup = document.querySelector('#sup');
 
         assert.deepEqual(parents(sup), [
             em,

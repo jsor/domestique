@@ -17,7 +17,7 @@ describe('matches()', () => {
     });
 
     it('matches against a CSS selector', () => {
-        const div = document.getElementById('foo');
+        const div = document.querySelector('#foo');
 
         assert(matches(div, 'div'));
         assert(matches(div, '#foo'));
@@ -43,7 +43,7 @@ describe('matches()', () => {
     });
 
     it('throws syntax error for invalid selector', () => {
-        const div = document.getElementById('foo');
+        const div = document.querySelector('#foo');
 
         assert.throws(() => {
             matches(div, '');
