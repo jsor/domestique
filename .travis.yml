@@ -7,13 +7,15 @@ addons:
   firefox: latest
   chrome: stable
 
+services:
+  - xvfb
+
 cache:
   directories:
     - $HOME/.compat-data
 
 before_script:
   - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
 
 script:
   - npm test
