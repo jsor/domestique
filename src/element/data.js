@@ -37,7 +37,7 @@ export default function data(element, key) {
     if (regExpBrace.test(data)) {
         try {
             return JSON.parse(data);
-        } catch (error) {
+        } catch (_) {
             return data;
         }
     }

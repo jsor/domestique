@@ -12,7 +12,7 @@ export default function dispatch(target, type, eventInit = {}) {
 
     try {
         event = new CustomEvent(type, eventInit);
-    } catch (error) {
+    } catch (_) {
         event = document.createEvent('CustomEvent');
         event.initCustomEvent(
             type,

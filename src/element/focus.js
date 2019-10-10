@@ -9,7 +9,7 @@ export default function focus(element, {restoreScrollPosition} = {}) {
 
     try {
         element.focus();
-    } catch (error) {
+    } catch (_) {
         // Ignore errors, eg. from SVG elements in Firefox, IE and Edge
     }
 
