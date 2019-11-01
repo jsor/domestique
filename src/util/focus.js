@@ -1,6 +1,6 @@
 import closest from '../query/closest';
-import find from '../query/find';
 import parents from '../element/parents';
+import selectAll from '../query/select-all';
 
 /*
  * Large parts ported from jQuery UI
@@ -79,7 +79,7 @@ function isValidArea(element) {
         return false;
     }
 
-    const images = find(`img[usemap="#${mapName}"]`);
+    const images = selectAll(document, `img[usemap="#${mapName}"]`);
 
     return images.length > 0 && visible(images[0]);
 }

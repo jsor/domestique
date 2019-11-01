@@ -1,8 +1,8 @@
 import {compare, focusableFilter, selector} from '../util/focus';
-import find from './find';
+import selectAll from './select-all';
 
 export default function focusable(element) {
-    return find(selector, arguments.length > 0 ? element : document)
+    return selectAll(arguments.length > 0 ? element : document, selector)
         .filter(focusableFilter)
         .sort(compare);
 }

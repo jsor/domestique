@@ -1,10 +1,10 @@
-import find from '../query/find';
+import selectAll from '../query/select-all';
 import fragmentContainer from '../util/fragment-container';
 
 export default function render(html) {
     const container = fragmentContainer(html);
 
-    const result = find('[ref]', container).reduce(
+    const result = selectAll(container, '[ref]').reduce(
         (result, element) => {
             const [, refName, isArray] = element
                 .getAttribute('ref')
