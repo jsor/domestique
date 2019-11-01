@@ -569,6 +569,8 @@ const closestParagraph = closest(element, 'p');
 
 #### find()
 
+*Deprecated in favor of [selectAll()](#selectall). To be removed in 2.0.*
+
 ```
 find(selector: string[, element: Element]): array
 ```

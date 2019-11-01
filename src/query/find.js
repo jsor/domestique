@@ -1,3 +1,6 @@
+/**
+ * @deprecated Deprecated in favor of selectAll(). To be removed in 2.0.
+ */
 export default function find(selector, element) {
     // Check here for explicitly passed element argument.
     // find('selector', undefined) must return an empty array instead of using
