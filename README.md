@@ -630,11 +630,11 @@ const isParagraph = matches(element, 'p');
 #### select()
 
 ```
-select(context: Element, selector: string): array
+select(context: Element, selector: string): Element
 ```
 
 Returns the descendant of `context` (`document` or `Element`) which matches the 
-specified `selector`.
+specified `selector`. If no element could be found, `null` is returned.
 
 ##### Example
 
@@ -650,8 +650,8 @@ const spanInsideParagraph = select(paragraph, 'span');
 select(context: Element, selector: string): array
 ```
 
-Returns all descendants of `context` (`document` or `Element`) which match the
-specified `selector`.
+Returns an `array` of all descendants of `context` (`document` or `Element`)
+which match the specified `selector`.
 
 ##### Example
 
