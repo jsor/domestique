@@ -24,6 +24,8 @@ import closest from './src/query/closest';
 import find from './src/query/find';
 import focusable from './src/query/focusable';
 import matches from './src/query/matches';
+import select from './src/query/select';
+import selectAll from './src/query/select-all';
 import tabbable from './src/query/tabbable';
 
 export {
@@ -59,5 +61,7 @@ export {
     find,
     focusable,
     matches,
+    select,
+    selectAll,
     tabbable
 };

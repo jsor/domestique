@@ -54,6 +54,8 @@ import {
     find,
     focusable,
     matches,
+    select,
+    selectAll,
     tabbable
 } from 'domestique';
 ```
@@ -90,6 +92,8 @@ API
   * [find()](#find)
   * [focusable()](#focusable)
   * [matches()](#matches)
+  * [select()](#select)
+  * [selectAll()](#selectall)
   * [tabbable()](#tabbable)
 
 ### Dimension
@@ -619,6 +623,40 @@ Returns `true` if the `element` would be selected by the specified `selector`,
 
 ```javascript
 const isParagraph = matches(element, 'p');
+```
+
+#### select()
+
+```
+select(context: Element, selector: string): array
+```
+
+Returns the descendant of `context` (`document` or `Element`) which matches the 
+specified `selector`.
+
+##### Example
+
+```javascript
+const paragraph = select(document, 'p');
+
+const spanInsideParagraph = select(paragraph, 'span');
+```
+
+#### selectAll()
+
+```
+select(context: Element, selector: string): array
+```
+
+Returns all descendants of `context` (`document` or `Element`) which match the
+specified `selector`.
+
+##### Example
+
+```javascript
+const allParagraphs = selectAll(document, 'p');
+
+const allSpansInsideFirstParagraph = selectAll(paragraph[0], 'span');
 ```
 
 #### tabbable()
