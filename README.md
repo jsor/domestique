@@ -578,7 +578,7 @@ argument.
 ```javascript
 const paragraphs = find('p');
 
-const spansInsideFirstParagraph = find('spans', paragraphs[0]);
+const spansInsideFirstParagraph = find('span', paragraphs[0]);
 ```
 
 #### focusable()
