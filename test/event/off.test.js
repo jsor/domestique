@@ -22,16 +22,16 @@ describe('off()', () => {
     });
 
     it('removes a listener', () => {
-        const el = document.querySelector('#item-2');
+        const element = document.querySelector('#item-2');
 
         const listener = () => {
             throw new Error('event fired');
         };
 
-        on(el, 'click', listener);
-        off(el, 'click', listener);
+        on(element, 'click', listener);
+        off(element, 'click', listener);
 
-        dispatch(el, 'click');
+        dispatch(element, 'click');
     });
 
     it('works for non-event-targets', () => {

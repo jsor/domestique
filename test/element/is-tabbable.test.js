@@ -1,25 +1,25 @@
 import {isTabbable} from '../..';
 import {focusFixture} from '../fixture';
 
-function assertIsTabbable(id, msg) {
+function assertIsTabbable(id, message) {
     const element = document.querySelector(id);
 
     assert.instanceOf(element, HTMLElement);
 
     assert(
         isTabbable(element),
-        msg + ' - ID ' + id + ' is tabbable'
+        message + ' - ID ' + id + ' is tabbable'
     );
 }
 
-function assertIsNotTabbable(id, msg) {
+function assertIsNotTabbable(id, message) {
     const element = document.querySelector(id);
 
     assert.instanceOf(element, HTMLElement);
 
     assert.isFalse(
         isTabbable(element),
-        msg + ' - ID ' + id + ' is not tabbable'
+        message + ' - ID ' + id + ' is not tabbable'
     );
 }
 

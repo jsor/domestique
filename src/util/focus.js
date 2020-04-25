@@ -92,8 +92,8 @@ function visible(element) {
         style.visibility !== 'hidden' &&
         style.visibility !== 'collapse' &&
         style.display !== 'none' &&
-        parents(element).every(el => {
-            return getComputedStyle(el).display !== 'none';
+        parents(element).every(parent => {
+            return getComputedStyle(parent).display !== 'none';
         })
     );
 }

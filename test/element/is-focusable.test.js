@@ -1,25 +1,25 @@
 import {isFocusable} from '../..';
 import {focusFixture} from '../fixture';
 
-function assertIsFocusable(id, msg) {
+function assertIsFocusable(id, message) {
     const element = document.querySelector(id);
 
     assert.instanceOf(element, HTMLElement);
 
     assert(
         isFocusable(element),
-        msg + ' - ID ' + id + ' is focusable'
+        message + ' - ID ' + id + ' is focusable'
     );
 }
 
-function assertIsNotFocusable(id, msg) {
+function assertIsNotFocusable(id, message) {
     const element = document.querySelector(id);
 
     assert.instanceOf(element, HTMLElement);
 
     assert.isFalse(
         isFocusable(element),
-        msg + ' - ID ' + id + ' is not focusable'
+        message + ' - ID ' + id + ' is not focusable'
     );
 }
 

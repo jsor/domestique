@@ -2,24 +2,24 @@ import {focusable} from '../..';
 import {focusFixture} from '../fixture';
 
 function elementIds(elements) {
-    return elements.map(el => {
-        return `#${el.id}`;
+    return elements.map(element => {
+        return `#${element.id}`;
     });
 }
 
-function assertIsFocusable(elements, id, msg) {
+function assertIsFocusable(elements, id, message) {
     assert.include(
         elementIds(elements),
         id,
-        msg + ' - ID ' + id + ' is focusable'
+        message + ' - ID ' + id + ' is focusable'
     );
 }
 
-function assertIsNotFocusable(elements, id, msg) {
+function assertIsNotFocusable(elements, id, message) {
     assert.notInclude(
         elementIds(elements),
         id,
-        msg + ' - ID ' + id + ' is not focusable'
+        message + ' - ID ' + id + ' is not focusable'
     );
 }
 

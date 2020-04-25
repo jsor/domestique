@@ -2,24 +2,24 @@ import {tabbable} from '../..';
 import {focusFixture} from '../fixture';
 
 function elementIds(elements) {
-    return elements.map(el => {
-        return `#${el.id}`;
+    return elements.map(element => {
+        return `#${element.id}`;
     });
 }
 
-function assertIsTabbable(elements, id, msg) {
+function assertIsTabbable(elements, id, message) {
     assert.include(
         elementIds(elements),
         id,
-        msg + ' - ID ' + id + ' is tabbable'
+        message + ' - ID ' + id + ' is tabbable'
     );
 }
 
-function assertIsNotTabbable(elements, id, msg) {
+function assertIsNotTabbable(elements, id, message) {
     assert.notInclude(
         elementIds(elements),
         id,
-        msg + ' - ID ' + id + ' is not tabbable'
+        message + ' - ID ' + id + ' is not tabbable'
     );
 }
 

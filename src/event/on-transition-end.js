@@ -48,8 +48,8 @@ export function parseTransition(element) {
     }
 
     const longest = map
-        .reduce((prev, curr) => {
-            return curr[1] >= prev[1] ? curr : prev;
+        .reduce((previous, current) => {
+            return current[1] >= previous[1] ? current : previous;
         }, fallback);
 
     longest.push(ignoreProps);
@@ -60,16 +60,16 @@ export function parseTransition(element) {
 export default function onTransitionEnd(target, listener) {
     const [prop, timeout, ignoreProps] = parseTransition(target);
 
-    const off = on(target, 'transitionend', e => {
-        if (e.target !== target) {
+    const off = on(target, 'transitionend', event => {
+        if (event.target !== target) {
             return;
         }
 
-        if (prop !== 'all' && prop !== e.propertyName) {
+        if (prop !== 'all' && prop !== event.propertyName) {
             return;
         }
 
-        if (prop === 'all' && ignoreProps.indexOf(e.propertyName) !== -1) {
+        if (prop === 'all' && ignoreProps.indexOf(event.propertyName) !== -1) {
             return;
         }
 

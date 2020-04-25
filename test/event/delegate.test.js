@@ -22,28 +22,28 @@ describe('delegate()', () => {
     });
 
     it('delegates the handling of events to an ancestor element', done => {
-        const el = document.querySelector('#item-1');
-        const el2 = document.querySelector('#item-2');
+        const element = document.querySelector('#item-1');
+        const element2 = document.querySelector('#item-2');
 
-        delegate(el, 'click', '#item-2', () => done());
+        delegate(element, 'click', '#item-2', () => done());
 
-        dispatch(el2, 'click', {
+        dispatch(element2, 'click', {
             bubbles: true
         });
     });
 
     it('does not invoke listener if selector does not match', () => {
-        const el = document.querySelector('#item-1');
-        const el2 = document.querySelector('#item-2');
+        const element = document.querySelector('#item-1');
+        const element2 = document.querySelector('#item-2');
 
         let called = 0;
         const spy = () => {
             called++;
         };
 
-        delegate(el, 'click', '#item-3', spy);
+        delegate(element, 'click', '#item-3', spy);
 
-        dispatch(el2, 'click', {
+        dispatch(element2, 'click', {
             bubbles: true
         });
 
@@ -51,59 +51,59 @@ describe('delegate()', () => {
     });
 
     it('passes delegate target as second argument to the listener', () => {
-        const el = document.querySelector('#item-1');
-        const el2 = document.querySelector('#item-2');
+        const element = document.querySelector('#item-1');
+        const element2 = document.querySelector('#item-2');
 
         let target;
-        const spy = function (e, t) {
+        const spy = function (_, t) {
             target = t;
         };
 
-        delegate(el, 'click', '#item-1', spy);
+        delegate(element, 'click', '#item-1', spy);
 
-        dispatch(el2, 'click', {
+        dispatch(element2, 'click', {
             bubbles: true
         });
 
-        assert.equal(target, el);
+        assert.equal(target, element);
     });
 
     it('binds the listener to the delegate target', () => {
-        const el = document.querySelector('#item-1');
-        const el2 = document.querySelector('#item-2');
+        const element = document.querySelector('#item-1');
+        const element2 = document.querySelector('#item-2');
 
         let thisValue;
         const spy = function () {
             thisValue = this;
         };
 
-        delegate(el, 'click', '#item-1', spy);
+        delegate(element, 'click', '#item-1', spy);
 
-        dispatch(el2, 'click', {
+        dispatch(element2, 'click', {
             bubbles: true
         });
 
-        assert.equal(thisValue, el);
+        assert.equal(thisValue, element);
     });
 
     it('returns a off method', () => {
-        const el = document.querySelector('#item-1');
-        const el2 = document.querySelector('#item-2');
+        const element = document.querySelector('#item-1');
+        const element2 = document.querySelector('#item-2');
 
         let called = 0;
         const spy = () => {
             called++;
         };
 
-        const off = delegate(el, 'click', '#item-2', spy);
+        const off = delegate(element, 'click', '#item-2', spy);
 
-        dispatch(el2, 'click', {
+        dispatch(element2, 'click', {
             bubbles: true
         });
 
         off();
 
-        dispatch(el2, 'click', {
+        dispatch(element2, 'click', {
             bubbles: true
         });
 
@@ -111,26 +111,26 @@ describe('delegate()', () => {
     });
 
     it('invokes a listener only once', () => {
-        const el = document.querySelector('#item-1');
-        const el2 = document.querySelector('#item-2');
-        const el3 = document.querySelector('#item-3');
+        const element = document.querySelector('#item-1');
+        const element2 = document.querySelector('#item-2');
+        const element3 = document.querySelector('#item-3');
 
         let called = 0;
         const spy = () => {
             called++;
         };
 
-        delegate(el, 'click', '#item-2', spy, {once: true});
+        delegate(element, 'click', '#item-2', spy, {once: true});
 
         // Dispatch event on non-matching child element
-        dispatch(el3, 'click', {
+        dispatch(element3, 'click', {
             bubbles: true
         });
 
-        dispatch(el2, 'click', {
+        dispatch(element2, 'click', {
             bubbles: true
         });
-        dispatch(el2, 'click', {
+        dispatch(element2, 'click', {
             bubbles: true
         });
 

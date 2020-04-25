@@ -22,34 +22,34 @@ describe('on()', () => {
     });
 
     it('adds a listener', done => {
-        const el = document.querySelector('#item-2');
+        const element = document.querySelector('#item-2');
 
-        on(el, 'click', () => done());
+        on(element, 'click', () => done());
 
-        dispatch(el, 'click');
+        dispatch(element, 'click');
     });
 
     it('removes the listener when remove() is called', () => {
-        const el = document.querySelector('#item-2');
-        const remove = on(el, 'click', () => {
+        const element = document.querySelector('#item-2');
+        const remove = on(element, 'click', () => {
             throw new Error('event fired');
         });
 
         remove();
 
-        dispatch(el, 'click');
+        dispatch(element, 'click');
     });
 
     it('invokes a listener only once', () => {
-        const el = document.querySelector('#item-2');
+        const element = document.querySelector('#item-2');
         let called = 0;
 
-        on(el, 'click', () => {
+        on(element, 'click', () => {
             called++;
         }, {once: true});
 
-        dispatch(el, 'click');
-        dispatch(el, 'click');
+        dispatch(element, 'click');
+        dispatch(element, 'click');
 
         assert.equal(called, 1);
     });
