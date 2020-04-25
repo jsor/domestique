@@ -734,5 +734,5 @@ Thank You
 License
 -------
 
-Copyright (c) 2018 Jan Sorgalla.
+Copyright (c) 2018-2020 Jan Sorgalla.
 Released under the [MIT](LICENSE) license.
