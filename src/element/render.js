@@ -9,7 +9,7 @@ export default function render(html) {
             const [, refName, isArray] = element
                 .getAttribute('ref')
                 .trim()
-                .match(/(.*?)(\[\])?$/);
+                .match(/(.*?)(\[])?$/);
 
             element.removeAttribute('ref');
 

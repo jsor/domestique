@@ -3,7 +3,7 @@
  * https://github.com/jquery/jquery/blob/c9aae3565edc840961ecbeee77fb0cb367c46702/src/data.js
  */
 
-const regExpBrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/;
+const regExpBrace = /^(?:{[\w\W]*}|\[[\w\W]*])$/;
 const regExpMultiDash = /[A-Z]/g;
 
 export default function data(element, key) {

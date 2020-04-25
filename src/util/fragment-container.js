@@ -19,7 +19,7 @@ wrapMap.caption = wrapMap.thead;
 
 wrapMap.th = wrapMap.td;
 
-const regexpTag = /<([a-z][^/\0>\u0020\t\r\n\f]*)/i;
+const regexpTag = /<([a-z][^/\0> \t\r\n\f]*)/i;
 
 export default function fragmentContainer(html) {
     const match = regexpTag.exec(html);
