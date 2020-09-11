@@ -4,6 +4,7 @@ import fragmentContainer from '../util/fragment-container';
 export default function render(html) {
     const container = fragmentContainer(html);
 
+    // eslint-disable-next-line unicorn/no-reduce
     const result = selectAll(container, '[ref]').reduce(
         (result, element) => {
             const [, refName, isArray] = element

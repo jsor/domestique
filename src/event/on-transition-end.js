@@ -48,6 +48,7 @@ export function parseTransition(element) {
     }
 
     const longest = map
+        // eslint-disable-next-line unicorn/no-reduce
         .reduce((previous, current) => {
             return current[1] >= previous[1] ? current : previous;
         }, fallback);
