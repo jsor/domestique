@@ -3,6 +3,6 @@ import selectAll from './select-all';
 
 export default function tabbable(element) {
     return selectAll(arguments.length > 0 ? element : document, selector)
-        .filter(tabbableFilter)
+        .filter(element => tabbableFilter(element))
         .sort(compare);
 }
