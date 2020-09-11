@@ -1,6 +1,5 @@
 import closest from '../query/closest';
 import on from './on';
-import optionsArgument from './options-argument';
 
 export default function delegate(
     target,
@@ -9,13 +8,11 @@ export default function delegate(
     listener,
     options = {}
 ) {
-    const evtOptions = optionsArgument(options);
-
     // Handle {once: true} which must only remove the listener when called
     // on the matching delegation target
-    const once = evtOptions.once === true;
+    const once = options.once === true;
 
-    delete evtOptions.once;
+    delete options.once;
 
     const remove = on(target, type, event => {
         const delegateTarget = closest(event.target, selector);
@@ -29,7 +26,7 @@ export default function delegate(
         }
 
         listener.call(delegateTarget, event, delegateTarget);
-    }, evtOptions);
+    }, options);
 
     return remove;
 }

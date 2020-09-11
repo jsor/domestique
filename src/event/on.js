@@ -7,12 +7,10 @@ export default function on(target, type, listener, options = {}) {
         return () => {};
     }
 
-    const evtOptions = optionsArgument(options);
-
     let callback = listener;
 
     const remove = () => {
-        off(target, type, callback, evtOptions);
+        off(target, type, callback, options);
     };
 
     if (options.once && !optionsSupport().once) {
@@ -22,7 +20,7 @@ export default function on(target, type, listener, options = {}) {
         };
     }
 
-    target.addEventListener(type, callback, evtOptions);
+    target.addEventListener(type, callback, optionsArgument(options));
 
     return remove;
 }
