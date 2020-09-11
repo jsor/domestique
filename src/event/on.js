@@ -15,7 +15,7 @@ export default function on(target, type, listener, options = {}) {
         off(target, type, callback, evtOptions);
     };
 
-    if (evtOptions.once && !optionsSupport().once) {
+    if (options.once && !optionsSupport().once) {
         callback = event => {
             remove();
             listener.call(target, event);
