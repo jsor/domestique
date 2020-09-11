@@ -63,7 +63,6 @@
   "scripts": {
     "build:test:browserstack": "webpack test/index.js --debug --mode none --progress --output test/build.js",
     "build:test:browserstack-legacy": "BROWSERSLIST='defaults, IE >= 10' webpack test/index.js --debug --mode none --progress --output test/build-legacy.js --module-bind 'js=babel-loader?presets[]=babel-preset-env'",
-    "compat": "compat --recursive --target src/ test/ --jsEnvs chrome61 edge16 firefox60 ios10_3 safari10_1 --htmlEnvs chrome61 edge16 firefox60 ios_saf10.3 safari10.1",
     "dev": "karma start",
     "lint": "xo",
     "test": "npm run lint && karma start --single-run",
@@ -76,7 +75,6 @@
     "babel-preset-env": "^1.7.0",
     "browserstack-runner": "^0.9.3",
     "chai": "^4.2.0",
-    "compat-cli": "^0.1.4",
     "istanbul-instrumenter-loader": "^3.0.1",
     "karma": "^5.2.2",
     "karma-chai": "^0.1.0",

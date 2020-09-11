@@ -10,10 +10,6 @@ addons:
 services:
   - xvfb
 
-cache:
-  directories:
-    - $HOME/.compat-data
-
 before_script:
   - export DISPLAY=:99.0
 
