@@ -16,4 +16,6 @@ before_script:
 script:
   - npm test
   - npm run test:browserstack
+  # Remove BrowserStackLocal binary to avoid ETXTBSY error
+  - rm -f node_modules/browserstack-runner/lib/BrowserStackLocal
   - npm run test:browserstack-legacy
