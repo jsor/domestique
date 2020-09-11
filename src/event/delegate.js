@@ -1,6 +1,6 @@
 import closest from '../query/closest';
 import on from './on';
-import optionsArgument from "./options-argument";
+import optionsArgument from './options-argument';
 
 export default function delegate(
     target,
