@@ -98,7 +98,7 @@ API
 
 ### Dimension
 
-### inViewport()
+#### inViewport()
 
 ```
 inViewport(element: Element): bool
@@ -106,13 +106,13 @@ inViewport(element: Element): bool
 
 Returns `true` if any part of an element is in the viewport.
 
-#### Example
+##### Example
 
 ```javascript
 const inVp = inViewport(element);
 ```
 
-### scrollbarSize()
+#### scrollbarSize()
 
 ```
 scrollbarSize(): number
@@ -120,13 +120,13 @@ scrollbarSize(): number
 
 Returns the size of the scrollbar in pixels.
 
-#### Example
+##### Example
 
 ```javascript
 const size = scrollbarSize();
 ```
 
-### viewportHeight()
+#### viewportHeight()
 
 ```
 viewportHeight(): number
@@ -138,13 +138,13 @@ Returns the viewport height.
   ([@media (height)](https://www.w3.org/TR/mediaqueries-4/#height)) including the
   size of a rendered scroll bar (if any).
 
-#### Example
+##### Example
 
 ```javascript
 const vpHeight = viewportHeight();
 ```
 
-### viewportWidth()
+#### viewportWidth()
 
 ```
 viewportWidth(): number
@@ -156,7 +156,7 @@ Returns the viewport width.
   ([@media (width)](https://www.w3.org/TR/mediaqueries-4/#width)) including the
   size of a rendered scroll bar (if any).
 
-#### Example
+##### Example
 
 ```javascript
 const vpWidth = viewportWidth();
