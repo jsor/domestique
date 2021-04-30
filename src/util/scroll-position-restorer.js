@@ -1,4 +1,4 @@
-import parents from '../element/parents';
+import parents from '../element/parents.js';
 
 export default function scrollPositionRestorer(element) {
     const positions = parents(element).map(parent => {

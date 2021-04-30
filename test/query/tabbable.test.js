@@ -1,5 +1,5 @@
-import {tabbable} from '../..';
-import {focusFixture} from '../fixture';
+import {tabbable} from '../../index.js';
+import {focusFixture} from '../fixture.js';
 
 function elementIds(elements) {
     return elements.map(element => {

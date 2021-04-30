@@ -1,4 +1,4 @@
-import optionsArgument from './options-argument';
+import optionsArgument from './options-argument.js';
 
 export default function ready(listener) {
     const state = document.readyState;

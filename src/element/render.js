@@ -1,10 +1,10 @@
-import selectAll from '../query/select-all';
-import fragmentContainer from '../util/fragment-container';
+import selectAll from '../query/select-all.js';
+import fragmentContainer from '../util/fragment-container.js';
 
 export default function render(html) {
     const container = fragmentContainer(html);
 
-    // eslint-disable-next-line unicorn/no-reduce
+    // eslint-disable-next-line unicorn/no-array-reduce
     const result = selectAll(container, '[ref]').reduce(
         (result, element) => {
             const [, refName, isArray] = element

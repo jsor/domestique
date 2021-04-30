@@ -1,5 +1,5 @@
-import viewportHeight from './viewport-height';
-import viewportWidth from './viewport-width';
+import viewportHeight from './viewport-height.js';
+import viewportWidth from './viewport-width.js';
 
 export default function inViewport(element) {
     if (!element || typeof element.getBoundingClientRect !== 'function') {

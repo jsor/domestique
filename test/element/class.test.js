@@ -1,4 +1,4 @@
-import {addClass, create, hasClass, removeClass} from '../..';
+import {addClass, create, hasClass, removeClass} from '../../index.js';
 
 describe('class()', () => {
     it('adds a class to an element', () => {

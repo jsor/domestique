@@ -1,5 +1,5 @@
-import {dispatch, off, on} from '../..';
-import createFixture from '../fixture';
+import {dispatch, off, on} from '../../index.js';
+import createFixture from '../fixture.js';
 
 describe('off()', () => {
     let fixture;

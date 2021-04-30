@@ -1,5 +1,5 @@
-import {focus, inViewport} from '../..';
-import createFixture from '../fixture';
+import {focus, inViewport} from '../../index.js';
+import createFixture from '../fixture.js';
 
 describe('focus()', () => {
     let fixture;

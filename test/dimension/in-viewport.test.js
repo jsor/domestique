@@ -1,5 +1,5 @@
-import {inViewport} from '../..';
-import createFixture from '../fixture';
+import {inViewport} from '../../index.js';
+import createFixture from '../fixture.js';
 
 describe('inViewport()', () => {
     let fixture;

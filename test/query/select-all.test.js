@@ -1,5 +1,5 @@
-import {selectAll} from '../..';
-import createFixture from '../fixture';
+import {selectAll} from '../../index.js';
+import createFixture from '../fixture.js';
 
 describe('selectAll()', () => {
     let fixture;

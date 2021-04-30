@@ -1,5 +1,5 @@
-import {closest} from '../..';
-import createFixture from '../fixture';
+import {closest} from '../../index.js';
+import createFixture from '../fixture.js';
 
 describe('closest()', () => {
     let fixture;

@@ -1,5 +1,5 @@
-import {activeElement} from '../..';
-import createFixture from '../fixture';
+import {activeElement} from '../../index.js';
+import createFixture from '../fixture.js';
 
 describe('activeElement()', () => {
     let fixture;

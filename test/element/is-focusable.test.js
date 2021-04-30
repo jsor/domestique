@@ -1,5 +1,5 @@
-import {isFocusable} from '../..';
-import {focusFixture} from '../fixture';
+import {isFocusable} from '../../index.js';
+import {focusFixture} from '../fixture.js';
 
 function assertIsFocusable(id, message) {
     const element = document.querySelector(id);

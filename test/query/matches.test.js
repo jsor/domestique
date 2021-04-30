@@ -1,5 +1,5 @@
-import {matches} from '../..';
-import createFixture from '../fixture';
+import {matches} from '../../index.js';
+import createFixture from '../fixture.js';
 
 describe('matches()', () => {
     let fixture;

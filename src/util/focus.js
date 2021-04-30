@@ -1,6 +1,6 @@
-import closest from '../query/closest';
-import parents from '../element/parents';
-import selectAll from '../query/select-all';
+import closest from '../query/closest.js';
+import parents from '../element/parents.js';
+import selectAll from '../query/select-all.js';
 
 /*
  * Large parts ported from jQuery UI

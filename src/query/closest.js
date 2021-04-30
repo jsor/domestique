@@ -1,4 +1,4 @@
-import matches from './matches';
+import matches from './matches.js';
 
 export default function closest(element, selector) {
     if (!element) {

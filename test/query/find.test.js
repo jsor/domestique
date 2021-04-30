@@ -1,5 +1,5 @@
-import {find} from '../..';
-import createFixture from '../fixture';
+import {find} from '../../index.js';
+import createFixture from '../fixture.js';
 
 describe('find()', () => {
     let fixture;

@@ -1,4 +1,4 @@
-import scrollPositionRestorer from '../util/scroll-position-restorer';
+import scrollPositionRestorer from '../util/scroll-position-restorer.js';
 
 export default function focus(element, {restoreScrollPosition} = {}) {
     let restorer;

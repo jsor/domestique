@@ -1,4 +1,4 @@
-import {scrollbarSize} from '../..';
+import {scrollbarSize} from '../../index.js';
 
 describe('scrollbarSize()', () => {
     it('returns a size', () => {

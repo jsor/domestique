@@ -1,4 +1,4 @@
-import support from './options-support';
+import support from './options-support.js';
 
 export default function optionsArgument(options = {}) {
     const {once, passive, capture} = support();

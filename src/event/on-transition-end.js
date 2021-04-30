@@ -1,4 +1,4 @@
-import on from './on';
+import on from './on.js';
 
 export function parseTransition(element) {
     const fallback = ['', 0];
@@ -48,7 +48,7 @@ export function parseTransition(element) {
     }
 
     const longest = map
-        // eslint-disable-next-line unicorn/no-reduce
+        // eslint-disable-next-line unicorn/no-array-reduce
         .reduce((previous, current) => {
             return current[1] >= previous[1] ? current : previous;
         }, fallback);

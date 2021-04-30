@@ -1,5 +1,5 @@
-import {delegate, dispatch} from '../..';
-import createFixture from '../fixture';
+import {delegate, dispatch} from '../../index.js';
+import createFixture from '../fixture.js';
 
 describe('delegate()', () => {
     let fixture;
@@ -74,6 +74,7 @@ describe('delegate()', () => {
 
         let thisValue;
         const spy = function () {
+            // eslint-disable-next-line unicorn/no-this-assignment
             thisValue = this;
         };
 

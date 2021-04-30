@@ -2,8 +2,8 @@ import {
     compare,
     focusableFilter,
     selector
-} from '../util/focus';
-import selectAll from './select-all';
+} from '../util/focus.js';
+import selectAll from './select-all.js';
 
 export default function focusable(element) {
     return selectAll(arguments.length > 0 ? element : document, selector)

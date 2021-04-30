@@ -1,5 +1,5 @@
-import {parents} from '../..';
-import createFixture from '../fixture';
+import {parents} from '../../index.js';
+import createFixture from '../fixture.js';
 
 describe('parents()', () => {
     let fixture;

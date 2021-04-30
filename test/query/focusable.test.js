@@ -1,5 +1,5 @@
-import {focusable} from '../..';
-import {focusFixture} from '../fixture';
+import {focusable} from '../../index.js';
+import {focusFixture} from '../fixture.js';
 
 function elementIds(elements) {
     return elements.map(element => {

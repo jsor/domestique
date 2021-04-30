@@ -1,6 +1,6 @@
-import optionsSupport from './options-support';
-import optionsArgument from './options-argument';
-import off from './off';
+import optionsSupport from './options-support.js';
+import optionsArgument from './options-argument.js';
+import off from './off.js';
 
 export default function on(target, type, listener, options = {}) {
     if (!target || typeof target.addEventListener !== 'function') {

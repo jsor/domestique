@@ -1,4 +1,4 @@
-import {create} from '..';
+import {create} from '../index.js';
 
 export default function createFixture() {
     const root = document.createElement('div');

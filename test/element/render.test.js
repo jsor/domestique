@@ -1,4 +1,4 @@
-import {render} from '../..';
+import {render} from '../../index.js';
 
 describe('render()', () => {
     it('creates references from a string', () => {

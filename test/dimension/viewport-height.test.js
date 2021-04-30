@@ -1,5 +1,5 @@
-import {viewportHeight} from '../..';
-import createFixture from '../fixture';
+import {viewportHeight} from '../../index.js';
+import createFixture from '../fixture.js';
 
 describe('viewportHeight()', () => {
     let fixture;

@@ -1,6 +1,6 @@
-import {onTransitionEnd, ready} from '../..';
-import {parseTransition} from '../../src/event/on-transition-end';
-import createFixture from '../fixture';
+import {onTransitionEnd, ready} from '../../index.js';
+import {parseTransition} from '../../src/event/on-transition-end.js';
+import createFixture from '../fixture.js';
 
 describe('onTransitionEnd()', function () {
     this.timeout(5000);

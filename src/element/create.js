@@ -1,4 +1,4 @@
-import fragmentContainer from '../util/fragment-container';
+import fragmentContainer from '../util/fragment-container.js';
 
 export default function create(html) {
     if (html.nodeType) {

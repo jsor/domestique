@@ -1,5 +1,5 @@
-import closest from '../query/closest';
-import on from './on';
+import closest from '../query/closest.js';
+import on from './on.js';
 
 export default function delegate(
     target,

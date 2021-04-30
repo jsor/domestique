@@ -1,5 +1,5 @@
-import {isTabbable} from '../..';
-import {focusFixture} from '../fixture';
+import {isTabbable} from '../../index.js';
+import {focusFixture} from '../fixture.js';
 
 function assertIsTabbable(id, message) {
     const element = document.querySelector(id);
