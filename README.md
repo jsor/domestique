@@ -4,7 +4,7 @@ Domestique
 A modular DOM helper library.
 
 [![Build Status](https://travis-ci.org/jsor/domestique.svg?branch=main)](https://travis-ci.org/jsor/domestique)
-[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=MncwbGZsVkc2M2xmeC9TNll6dUtVQ2g5ZjYvSERxdEtSZzNoZTFVc3g4cz0tLURiWVhRZXRZQ2RNS3BteTdzS2FURHc9PQ==--5101c2094cba0afbd62fb06961cb133afeaed8d9)](https://www.browserstack.com/automate/public-build/MncwbGZsVkc2M2xmeC9TNll6dUtVQ2g5ZjYvSERxdEtSZzNoZTFVc3g4cz0tLURiWVhRZXRZQ2RNS3BteTdzS2FURHc9PQ==--5101c2094cba0afbd62fb06961cb133afeaed8d9)
+[![BrowserStack Status](https://automate.browserstack.com/badge.svg?badge_key=cTVLQkMzR2c3K3RyczhNcFhRdDBCcVlBcTNmOXB4cnRsbXM3UE9FTmsrcz0tLUl2c3cwRmJKRGxvNnozRGtnSXBFaWc9PQ==--3dac58a116961a1e6c7c0aa0de2780e9cc5cd48c)](https://automate.browserstack.com/public-build/cTVLQkMzR2c3K3RyczhNcFhRdDBCcVlBcTNmOXB4cnRsbXM3UE9FTmsrcz0tLUl2c3cwRmJKRGxvNnozRGtnSXBFaWc9PQ==--3dac58a116961a1e6c7c0aa0de2780e9cc5cd48c)
 
 Installation
 ------------
